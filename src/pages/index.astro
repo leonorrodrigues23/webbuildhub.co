@@ -1,0 +1,2105 @@
+---
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  📄 WEBSITE BUILDER REVIEW PAGE - WebBuildHub Style            ║
+// ╚═══════════════════════════════════════════════════════════════╝
+
+import MainLayout from '../layouts/MainLayout.astro';
+import { SITE_BRAND } from '../consts';
+import { getAuthorByCategory } from '../authors';
+
+// ═══════════════════════════════════════════════════════════════
+// 🎯 ARTICLE CONFIGURATION
+// ═══════════════════════════════════════════════════════════════
+const articleConfig = {
+  category: "Website Builders",
+  title: "Best Website Builders for 2026",
+  subtitle: "Building a website doesn't have to be complicated. We cut through the jargon and compare what actually matters, so you can launch a stunning site with confidence.",
+  readingTime: "14 min read"
+};
+
+// Get author from author system
+const author = getAuthorByCategory(articleConfig.category, articleConfig.title, ['website', 'builder', 'web design']);
+
+// ═══════════════════════════════════════════════════════════════
+// 📊 TESTING STATS
+// ═══════════════════════════════════════════════════════════════
+const testingStats = {
+  productsTested: 30,
+  hoursOfTesting: 150,
+  expertsInvolved: 5,
+  lastUpdated: "Feb. 25, 2026"
+};
+
+// ═══════════════════════════════════════════════════════════════
+// 🛒 WEBSITE BUILDER PRODUCTS
+// ═══════════════════════════════════════════════════════════════
+const products = [
+  {
+    rank: 1,
+    name: "Shopify",
+    bestFor: "Best All-in-One Website Builder",
+    shortDescription: "The most powerful and versatile website builder on the market. Build anything from a simple portfolio to a full-scale e-commerce empire with drag-and-drop ease, 100+ professional themes, and unmatched app ecosystem.",
+    image: "/images/shopify.svg",
+    rating: 4.8,
+    spec1Label: "Starting Price", spec1Value: "$39/mo",
+    spec2Label: "Free Trial", spec2Value: "3 Days Free",
+    spec3Label: "Templates", spec3Value: "100+",
+    spec4Label: "E-commerce", spec4Value: "Built-in",
+    spec5Label: "24/7 Support", spec5Value: "Yes",
+    url: "https://shopify.pxf.io/webbuildhub",
+    pros: [
+      "Most powerful e-commerce features of any website builder",
+      "Massive app store with 8,000+ integrations",
+      "Professional themes that look stunning on any device",
+      "Built-in SEO tools and marketing automation",
+      "Handles unlimited products and high traffic effortlessly",
+      "24/7 priority support via chat, email, and phone"
+    ],
+    cons: [
+      "Monthly cost higher than basic competitors",
+      "Transaction fees unless using Shopify Payments",
+      "Advanced customization requires some learning"
+    ],
+    bottomLine: "Shopify is our top pick for 2026 because it delivers the perfect balance of power and simplicity. Whether you're launching a personal blog, portfolio, or full online store, Shopify's drag-and-drop builder, professional themes, and industry-leading e-commerce tools make it the clear choice for anyone serious about building a successful website.",
+    editorChoice: true
+  },
+  {
+    rank: 2,
+    name: "Wix",
+    bestFor: "Best for Creative Freedom",
+    shortDescription: "The most flexible drag-and-drop editor with 900+ designer-made templates. AI-powered site builder, built-in SEO tools, and a generous free plan make it ideal for creative professionals.",
+    image: "/images/wix.svg",
+    rating: 4.6,
+    spec1Label: "Starting Price", spec1Value: "$17/mo",
+    spec2Label: "Free Plan", spec2Value: "Yes",
+    spec3Label: "Templates", spec3Value: "900+",
+    spec4Label: "E-commerce", spec4Value: "Business+ Plans",
+    spec5Label: "AI Builder", spec5Value: "Yes",
+    url: "#",
+    pros: [
+      "Most intuitive drag-and-drop editor on the market",
+      "900+ professionally designed templates",
+      "AI-powered website builder for instant site creation",
+      "Generous free plan for getting started",
+      "Built-in SEO, analytics, and marketing tools",
+      "Wix App Market with 300+ integrations"
+    ],
+    cons: [
+      "Cannot switch templates after publishing",
+      "E-commerce features only on premium plans",
+      "Free plan displays Wix branding"
+    ],
+    bottomLine: "Wix offers unmatched creative freedom with its pixel-perfect drag-and-drop editor. It's ideal for designers, artists, and small businesses who want complete control over their site's look and feel.",
+    editorChoice: false
+  },
+  {
+    rank: 3,
+    name: "Squarespace",
+    bestFor: "Best for Beautiful Design",
+    shortDescription: "Award-winning templates and a sleek editor that produces the most visually stunning websites. Perfect for portfolios, restaurants, and creative professionals who want to make a lasting impression.",
+    image: "/images/squarespace.svg",
+    rating: 4.5,
+    spec1Label: "Starting Price", spec1Value: "$16/mo",
+    spec2Label: "Free Trial", spec2Value: "14 Days",
+    spec3Label: "Templates", spec3Value: "150+",
+    spec4Label: "E-commerce", spec4Value: "Business+ Plans",
+    spec5Label: "Blogging", spec5Value: "Excellent",
+    url: "#",
+    pros: [
+      "Industry-leading design quality and aesthetics",
+      "All templates are mobile-responsive out of the box",
+      "Built-in blogging, scheduling, and email marketing",
+      "Excellent for portfolios and visual-heavy sites",
+      "No transaction fees on any plan",
+      "Free custom domain for the first year"
+    ],
+    cons: [
+      "Less flexibility than Wix for custom layouts",
+      "Fewer third-party integrations available",
+      "No free plan, only a 14-day trial"
+    ],
+    bottomLine: "Squarespace produces the most beautiful websites of any builder. If aesthetics and brand presentation are your top priorities, Squarespace's curated templates and polished editor deliver a premium result.",
+    editorChoice: false
+  },
+  {
+    rank: 4,
+    name: "WordPress.com",
+    bestFor: "Best for Blogging & Content",
+    shortDescription: "The hosted version of the world's most popular CMS. Ideal for bloggers, publishers, and content-heavy sites with thousands of plugins, powerful SEO, and unlimited scalability.",
+    image: "/images/wordpress.svg",
+    rating: 4.3,
+    spec1Label: "Starting Price", spec1Value: "$4/mo",
+    spec2Label: "Free Plan", spec2Value: "Yes",
+    spec3Label: "Themes", spec3Value: "Thousands",
+    spec4Label: "Plugins", spec4Value: "59,000+",
+    spec5Label: "Blogging", spec5Value: "Best-in-Class",
+    url: "#",
+    pros: [
+      "Most powerful content management system available",
+      "59,000+ plugins for any functionality imaginable",
+      "Thousands of free and premium themes",
+      "Unmatched SEO capabilities and flexibility",
+      "Scales from personal blog to enterprise site",
+      "Free plan available with basic features"
+    ],
+    cons: [
+      "Steeper learning curve than visual builders",
+      "Plugin management can become complex",
+      "Full features require Business plan or higher"
+    ],
+    bottomLine: "WordPress.com is the gold standard for content-focused websites. If you're building a blog, news site, or content-heavy platform, nothing beats WordPress's flexibility and ecosystem.",
+    editorChoice: false
+  },
+  {
+    rank: 5,
+    name: "Weebly",
+    bestFor: "Best Budget-Friendly Builder",
+    shortDescription: "A straightforward, affordable website builder now owned by Square. Simple drag-and-drop interface with integrated e-commerce features and a generous free plan for basic websites.",
+    image: "/images/weebly.svg",
+    rating: 4.1,
+    spec1Label: "Starting Price", spec1Value: "$10/mo",
+    spec2Label: "Free Plan", spec2Value: "Yes",
+    spec3Label: "Templates", spec3Value: "40+",
+    spec4Label: "E-commerce", spec4Value: "Built-in",
+    spec5Label: "Square Integration", spec5Value: "Yes",
+    url: "#",
+    pros: [
+      "Very affordable pricing with generous free plan",
+      "Simple, beginner-friendly drag-and-drop editor",
+      "Integrated Square payment processing",
+      "Built-in e-commerce on all plans",
+      "Solid mobile app for on-the-go editing",
+      "No transaction fees on paid plans"
+    ],
+    cons: [
+      "Limited template selection compared to competitors",
+      "Fewer advanced design customization options",
+      "Feature development has slowed since Square acquisition"
+    ],
+    bottomLine: "Weebly remains a solid budget choice for simple websites and small online stores. Its Square integration makes it particularly good for businesses already using Square for payments.",
+    editorChoice: false
+  },
+  {
+    rank: 6,
+    name: "GoDaddy Builder",
+    bestFor: "Best for Quick Setup",
+    shortDescription: "The fastest way to get online. AI-powered builder creates a professional site in minutes. Integrated with GoDaddy's domain and hosting services for a seamless one-stop experience.",
+    image: "/images/godaddy.svg",
+    rating: 3.9,
+    spec1Label: "Starting Price", spec1Value: "$11.99/mo",
+    spec2Label: "Free Trial", spec2Value: "Yes",
+    spec3Label: "Templates", spec3Value: "100+",
+    spec4Label: "E-commerce", spec4Value: "Commerce Plans",
+    spec5Label: "AI Builder", spec5Value: "Yes",
+    url: "#",
+    pros: [
+      "Fastest setup process, site ready in under an hour",
+      "AI creates initial design based on your business",
+      "Integrated domain, hosting, and email services",
+      "InSight analytics dashboard included",
+      "Built-in appointment booking and social tools",
+      "24/7 phone support from GoDaddy"
+    ],
+    cons: [
+      "Limited design flexibility compared to Wix or Squarespace",
+      "Fewer advanced features and integrations",
+      "More expensive per feature than competitors"
+    ],
+    bottomLine: "GoDaddy Builder is perfect for business owners who want to get online fast without overthinking design choices. Its AI-powered setup and GoDaddy integration make it the quickest path to a professional website.",
+    editorChoice: false
+  }
+];
+
+// ═══════════════════════════════════════════════════════════════
+// 📋 METHODOLOGY
+// ═══════════════════════════════════════════════════════════════
+const methodology = [
+  { number: "01", title: "Ease of Use", description: "We evaluate the learning curve, editor intuitiveness, and onboarding experience. The best builders let you create a professional site without any coding knowledge or prior design experience." },
+  { number: "02", title: "Design & Templates", description: "We assess template quality, variety, customization flexibility, and mobile responsiveness. Every site we build gets tested across devices and screen sizes." },
+  { number: "03", title: "Features & Value", description: "We compare built-in tools, third-party integrations, e-commerce capabilities, and pricing tiers to determine which builders deliver the most functionality for your investment." },
+  { number: "04", title: "Performance & Support", description: "We measure page load speeds, uptime reliability, SEO tools, and customer support quality across chat, email, and phone channels." }
+];
+
+// ═══════════════════════════════════════════════════════════════
+// ✅ CRITERIA
+// ═══════════════════════════════════════════════════════════════
+const criteria = [
+  { icon: "shield", color: "green", title: "Easy to Use", description: "Intuitive drag-and-drop editors and guided setup. The best builders let you create a stunning site without writing a single line of code." },
+  { icon: "dollar", color: "blue", title: "Great Value", description: "Competitive pricing with transparent plans. Top builders offer powerful features starting under $20/month with free trials." },
+  { icon: "users", color: "purple", title: "Beautiful Templates", description: "Professional, mobile-responsive designs out of the box. Choose from hundreds of templates and customize to match your brand." },
+  { icon: "document", color: "orange", title: "Reliable Performance", description: "Fast loading speeds, 99.9% uptime, and built-in SEO tools to help your site rank well and stay online." }
+];
+
+// ═══════════════════════════════════════════════════════════════
+// ❓ FAQ
+// ═══════════════════════════════════════════════════════════════
+const faqs = [
+  {
+    question: "What is the best website builder for beginners?",
+    answer: "Shopify and Wix are the best options for beginners. Shopify offers the most intuitive setup with powerful e-commerce built in, while Wix provides the most creative freedom with its drag-and-drop editor. Both require zero coding knowledge."
+  },
+  {
+    question: "How much does a website builder cost?",
+    answer: "Most website builders range from $10 to $40 per month. Free plans are available from Wix, WordPress.com, and Weebly, but come with limitations like ads and no custom domain. For a professional site, expect to pay $16-39/month."
+  },
+  {
+    question: "Do I need a website builder or can I code my own site?",
+    answer: "Unless you are a developer, a website builder saves you hundreds of hours and thousands of dollars. Modern builders produce professional results that rival custom-coded sites, with the added benefit of built-in hosting, security, and updates."
+  },
+  {
+    question: "Can I use a website builder for an online store?",
+    answer: "Yes. Shopify is the best option for e-commerce, with built-in payment processing, inventory management, and shipping tools. Wix, Squarespace, and Weebly also offer e-commerce features on their premium plans."
+  },
+  {
+    question: "Can I switch website builders later?",
+    answer: "Yes, but it requires effort. You will need to recreate your design and migrate content. Some builders offer import tools, but it is generally easier to choose the right platform from the start. That is why we recommend testing free trials before committing."
+  },
+  {
+    question: "Do website builders include hosting?",
+    answer: "Yes, all major website builders include web hosting in their plans. This means you do not need to purchase separate hosting. Your site's files, images, and data are stored and served automatically."
+  }
+];
+
+// Helper function for star ratings with partial fills
+function getStarRating(rating: number) {
+  const fullStars = Math.floor(rating);
+  const partialFill = (rating - fullStars) * 100;
+  const emptyStars = 5 - Math.ceil(rating);
+  return { fullStars, partialFill, emptyStars, hasPartial: partialFill > 0 };
+}
+---
+
+<MainLayout title={articleConfig.title} description={articleConfig.subtitle}>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-meta">
+          <span class="category-tag">{articleConfig.category}</span>
+          <span class="separator">•</span>
+          <span class="reading-time">{articleConfig.readingTime}</span>
+        </div>
+        <h1 class="hero-title">{articleConfig.title}</h1>
+        <p class="hero-subtitle">{articleConfig.subtitle}</p>
+        <div class="author-card">
+          <img src={author.image} alt={author.name} class="author-image" onerror="this.src='https://ui-avatars.com/api/?name=EJ&background=1a365d&color=fff&size=96'" />
+          <div class="author-details">
+            <div class="author-name">{author.name}</div>
+            <div class="author-title">{author.title}</div>
+          </div>
+          <div class="author-date">
+            <span>Updated</span>
+            <strong>{testingStats.lastUpdated}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BADGES -->
+  <section class="trust-section">
+    <div class="trust-container">
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span><strong>{testingStats.productsTested}</strong> products tested</span>
+        </div>
+        <div class="trust-badge">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span><strong>{testingStats.hoursOfTesting}+</strong> hours of testing</span>
+        </div>
+        <div class="trust-badge">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span><strong>{testingStats.expertsInvolved}</strong> experts involved</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP 3 FEATURED CARDS -->
+  <section class="top-picks-section">
+    <div class="top-picks-container">
+      <div class="top-picks-grid">
+        {/* Second Place - Left */}
+        <div class="top-pick-card">
+          <div class="top-pick-logo">
+            <img src={products[1].image} alt={products[1].name} onerror="this.style.display='none'" />
+          </div>
+          <h3 class="top-pick-best-for">{products[1].bestFor}</h3>
+          <p class="top-pick-description">{products[1].shortDescription}</p>
+          <div class="top-pick-rating">
+            <span class="rating-number">{products[1].rating}</span>
+            <div class="stars-container">
+              {(() => {
+                const { fullStars, partialFill, hasPartial } = getStarRating(products[1].rating);
+                return (
+                  <>
+                    {[...Array(fullStars)].map(() => (
+                      <svg class="star-icon full" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    ))}
+                    {hasPartial && (
+                      <svg class="star-icon partial" viewBox="0 0 20 20">
+                        <defs>
+                          <linearGradient id={`star-grad-${products[1].rating}`}>
+                            <stop offset={`${partialFill}%`} stop-color="#FBBF24"/>
+                            <stop offset={`${partialFill}%`} stop-color="#E5E7EB"/>
+                          </linearGradient>
+                        </defs>
+                        <path fill={`url(#star-grad-${products[1].rating})`} d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    )}
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+          <a href={products[1].url} target="_blank" rel="nofollow noopener" class="top-pick-cta">
+            Try It Free <span class="arrow">→</span>
+          </a>
+        </div>
+
+        {/* First Place - Center (Elevated) */}
+        <div class="top-pick-card featured">
+          <div class="featured-badge">#1 Choice</div>
+          <div class="top-pick-logo">
+            <img src={products[0].image} alt={products[0].name} onerror="this.style.display='none'" />
+          </div>
+          <h3 class="top-pick-best-for">{products[0].bestFor}</h3>
+          <p class="top-pick-description">{products[0].shortDescription}</p>
+          <div class="top-pick-rating">
+            <span class="rating-number">{products[0].rating}</span>
+            <div class="stars-container">
+              {(() => {
+                const { fullStars, partialFill, hasPartial } = getStarRating(products[0].rating);
+                return (
+                  <>
+                    {[...Array(fullStars)].map(() => (
+                      <svg class="star-icon full" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    ))}
+                    {hasPartial && (
+                      <svg class="star-icon partial" viewBox="0 0 20 20">
+                        <defs>
+                          <linearGradient id={`star-grad-featured-${products[0].rating}`}>
+                            <stop offset={`${partialFill}%`} stop-color="#FBBF24"/>
+                            <stop offset={`${partialFill}%`} stop-color="#E5E7EB"/>
+                          </linearGradient>
+                        </defs>
+                        <path fill={`url(#star-grad-featured-${products[0].rating})`} d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    )}
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+          <a href={products[0].url} target="_blank" rel="nofollow noopener" class="top-pick-cta">
+            Try It Free <span class="arrow">→</span>
+          </a>
+        </div>
+
+        {/* Third Place - Right */}
+        <div class="top-pick-card">
+          <div class="top-pick-logo">
+            <img src={products[2].image} alt={products[2].name} onerror="this.style.display='none'" />
+          </div>
+          <h3 class="top-pick-best-for">{products[2].bestFor}</h3>
+          <p class="top-pick-description">{products[2].shortDescription}</p>
+          <div class="top-pick-rating">
+            <span class="rating-number">{products[2].rating}</span>
+            <div class="stars-container">
+              {(() => {
+                const { fullStars, partialFill, hasPartial } = getStarRating(products[2].rating);
+                return (
+                  <>
+                    {[...Array(fullStars)].map(() => (
+                      <svg class="star-icon full" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    ))}
+                    {hasPartial && (
+                      <svg class="star-icon partial" viewBox="0 0 20 20">
+                        <defs>
+                          <linearGradient id={`star-grad-third-${products[2].rating}`}>
+                            <stop offset={`${partialFill}%`} stop-color="#FBBF24"/>
+                            <stop offset={`${partialFill}%`} stop-color="#E5E7EB"/>
+                          </linearGradient>
+                        </defs>
+                        <path fill={`url(#star-grad-third-${products[2].rating})`} d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    )}
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+          <a href={products[2].url} target="_blank" rel="nofollow noopener" class="top-pick-cta">
+            Try It Free <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY NAVIGATION -->
+  <nav class="sticky-nav" id="sticky-nav">
+    <div class="sticky-nav-container" id="nav-scroll-container">
+      <a href="#how-to-choose" class="sticky-nav-link" data-section="how-to-choose">How to Choose</a>
+      <a href="#methodology" class="sticky-nav-link" data-section="methodology">Methodology</a>
+      <a href="#top-builders" class="sticky-nav-link active" data-section="top-builders">Top Builders</a>
+      <a href="#compare" class="sticky-nav-link" data-section="compare">Compare</a>
+      <a href="#buying-guide" class="sticky-nav-link" data-section="buying-guide">Buying Guide</a>
+      <a href="#faq" class="sticky-nav-link" data-section="faq">FAQ</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <article class="editorial-content">
+    <div class="content-container">
+
+      <!-- Intro Heading -->
+      <h2 class="section-heading">Best Website Builders in February 2026</h2>
+      <p class="intro-text">Our team analyzed 30 website builders, prioritizing what matters most to today's users: ease of use, design quality, and value for money. These 6 builders emerged as the best options for anyone looking to create a professional website without coding.</p>
+
+      <!-- WHAT WE LOOK FOR -->
+      <div id="how-to-choose" class="criteria-section">
+        <h2 class="section-heading">What We Look For</h2>
+        <p class="section-intro">After testing dozens of website builders, we found that ease of use, design quality, and value matter most to today's users:</p>
+        <div class="criteria-grid">
+          {criteria.map((item) => (
+            <div class="criteria-card">
+              <div class={`criteria-icon ${item.color}`}>
+                {item.icon === 'shield' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                )}
+                {item.icon === 'dollar' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                )}
+                {item.icon === 'users' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                )}
+                {item.icon === 'document' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                )}
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- HOW WE RANK -->
+      <div id="methodology" class="methodology-section">
+        <h2 class="methodology-title">How We Rank Website Builders</h2>
+        <p class="methodology-intro">Our team of {testingStats.expertsInvolved} experts has evaluated over 30 website builders, prioritizing what matters most to users building their online presence:</p>
+        <div class="methodology-grid">
+          {methodology.map((item) => (
+            <div class="methodology-card">
+              <div class="methodology-number">{item.number}</div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Editorial Disclaimer -->
+      <p class="editorial-disclaimer">We may earn a commission from partner links, but this does not influence our rankings or recommendations. <a href="/disclaimer">Learn more</a></p>
+
+      <!-- DETAILED PRODUCT REVIEWS -->
+      <div id="top-builders" class="reviews-section">
+        {products.map((product) => (
+          <div id={`pick-${product.rank}`} class={`review-card ${product.editorChoice ? 'editor-choice' : ''}`}>
+            {product.editorChoice && <div class="editor-choice-banner">Editor's Choice</div>}
+
+            <div class="review-layout">
+              <!-- Left Column -->
+              <div class="review-left">
+                <div class="review-logo">
+                  <img src={product.image} alt={product.name} onerror="this.style.display='none'" />
+                </div>
+                <div class="review-rating-block">
+                  <span class="rating-star">★</span>
+                  <span class="rating-large">{product.rating}</span>
+                  <span class="rating-max">/5</span>
+                </div>
+                <a href={product.url} target="_blank" rel="nofollow noopener" class="review-cta">
+                  Try It Free <span class="arrow">→</span>
+                </a>
+                <p class="review-cta-subtext">On {product.name}'s Website</p>
+              </div>
+
+              <!-- Right Column -->
+              <div class="review-right">
+                <div class="review-header">
+                  <h3 class="review-name">{product.name}</h3>
+                  <span class="review-rank">#{product.rank}</span>
+                </div>
+                <span class="review-best-for">{product.bestFor}</span>
+
+                <!-- Spec Boxes -->
+                <div class="spec-boxes">
+                  <div class="spec-box">
+                    <span class="spec-label">{product.spec1Label}</span>
+                    <span class="spec-value">{product.spec1Value}</span>
+                  </div>
+                  <div class="spec-box">
+                    <span class="spec-label">{product.spec2Label}</span>
+                    <span class="spec-value">{product.spec2Value}</span>
+                  </div>
+                  <div class="spec-box">
+                    <span class="spec-label">{product.spec3Label}</span>
+                    <span class="spec-value">{product.spec3Value}</span>
+                  </div>
+                  <div class="spec-box">
+                    <span class="spec-label">{product.spec4Label}</span>
+                    <span class="spec-value">{product.spec4Value}</span>
+                  </div>
+                  <div class="spec-box">
+                    <span class="spec-label">{product.spec5Label}</span>
+                    <span class="spec-value">{product.spec5Value}</span>
+                  </div>
+                </div>
+
+                <p class="review-description">{product.bottomLine}</p>
+
+                <!-- Pros & Cons Accordion -->
+                <details class="pros-cons-accordion">
+                  <summary class="accordion-trigger">Pros & Cons</summary>
+                  <div class="accordion-content">
+                    <div class="pros-section">
+                      <h4 class="pros-title">Pros</h4>
+                      <ul class="pros-list">
+                        {product.pros.map(pro => (
+                          <li><span class="check">✓</span> {pro}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div class="cons-section">
+                      <h4 class="cons-title">Cons</h4>
+                      <ul class="cons-list">
+                        {product.cons.map(con => (
+                          <li><span class="x">✗</span> {con}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- COMPARISON TABLE -->
+      <div id="compare" class="comparison-section">
+        <h2 class="section-heading">Quick Comparison of All Providers</h2>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Builder</th>
+                <th>Best For</th>
+                <th>Free Plan</th>
+                <th>Starting Price</th>
+                <th>Rating</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((product, index) => (
+                <tr>
+                  <td class="product-cell">
+                    {index === 0 && <span class="table-editor-badge">Editor's Choice</span>}
+                    <div class="product-info">
+                      <img src={product.image} alt={product.name} class="table-image" onerror="this.style.display='none'" />
+                      <span class="table-product-name">{product.name}</span>
+                    </div>
+                  </td>
+                  <td><span class="best-for-badge">{product.bestFor}</span></td>
+                  <td class="spec-cell">{product.spec2Value}</td>
+                  <td class="spec-cell">{product.spec1Value}</td>
+                  <td class="rating-cell">{product.rating}</td>
+                  <td><a href={product.url} target="_blank" rel="nofollow noopener" class="table-cta">Try It Free</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- DECISION GUIDE -->
+      <div id="buying-guide" class="decision-guide">
+        <h2 class="section-heading">Website Builder Decision Guide: What You Actually Need to Know</h2>
+        <p class="guide-intro">Real data, actual costs, and tactical comparisons to help you choose the right builder and avoid overpaying.</p>
+
+        <div class="guide-section">
+          <h3>What Should You Actually Pay? (2026 Pricing Breakdown)</h3>
+          <p><strong>Website builder pricing varies dramatically by feature tier. Here's what real users pay across the top platforms:</strong></p>
+
+          <p><strong>Entry-Level Plans (Basic websites, portfolios, blogs):</strong></p>
+          <ul>
+            <li>WordPress.com: <strong>$4/month</strong> (Personal plan, limited features)</li>
+            <li>Weebly: <strong>$10/month</strong> (Personal plan, basic e-commerce)</li>
+            <li>GoDaddy Builder: <strong>$11.99/month</strong> (Basic plan, AI builder included)</li>
+            <li>Squarespace: <strong>$16/month</strong> (Personal plan, unlimited pages)</li>
+            <li>Wix: <strong>$17/month</strong> (Light plan, custom domain included)</li>
+            <li>Shopify: <strong>$39/month</strong> (Basic plan, full e-commerce suite)</li>
+          </ul>
+
+          <p><strong>Business Plans (E-commerce, marketing tools, analytics):</strong></p>
+          <ul>
+            <li>WordPress.com: <strong>$25/month</strong> (Business plan, plugin access)</li>
+            <li>Weebly: <strong>$21/month</strong> (Professional plan, advanced stats)</li>
+            <li>Squarespace: <strong>$23/month</strong> (Business plan, e-commerce ready)</li>
+            <li>Wix: <strong>$32/month</strong> (Business plan, accept payments)</li>
+            <li>Shopify: <strong>$105/month</strong> (Shopify plan, professional reports)</li>
+            <li>GoDaddy Builder: <strong>$21.99/month</strong> (Standard plan, marketing tools)</li>
+          </ul>
+
+          <p><strong>Annual vs Monthly Billing:</strong></p>
+          <ul>
+            <li>Most builders offer <strong>20-40% discounts</strong> for annual billing</li>
+            <li>Squarespace: Save 30% with annual plan ($16/mo vs $23/mo monthly)</li>
+            <li>Wix: Save 25% with annual plan</li>
+            <li>Shopify: Save 25% with annual plan</li>
+          </ul>
+
+          <p><em>Always start with a free trial or free plan before committing to a paid tier. Most builders offer 14-day trials, and Wix, WordPress.com, and Weebly have permanent free plans.</em></p>
+        </div>
+
+        <div class="guide-section">
+          <h3>Choosing Your Plan: The Feature-Cost Breakdown</h3>
+          <p><strong>Understanding what you get at each tier prevents overpaying for features you do not need.</strong></p>
+
+          <p><strong>Basic Plan (Good for personal sites and portfolios)</strong></p>
+          <ul>
+            <li>Custom domain connection</li>
+            <li>SSL certificate (free on all builders)</li>
+            <li>Basic templates and customization</li>
+            <li>Limited storage (typically 3-10 GB)</li>
+            <li>Basic analytics</li>
+            <li><strong>Best for:</strong> Personal blogs, simple portfolios, landing pages</li>
+          </ul>
+
+          <p><strong>Business Plan (Good for growing businesses)</strong></p>
+          <ul>
+            <li>Everything in Basic, plus:</li>
+            <li>E-commerce functionality (accept payments)</li>
+            <li>Remove builder branding</li>
+            <li>Unlimited or expanded storage</li>
+            <li>Advanced SEO tools and analytics</li>
+            <li>Priority customer support</li>
+            <li><strong>Best for:</strong> Small businesses, freelancers, service providers</li>
+          </ul>
+
+          <p><strong>E-commerce Plan (Good for online stores)</strong></p>
+          <ul>
+            <li>Everything in Business, plus:</li>
+            <li>No transaction fees (or reduced fees)</li>
+            <li>Inventory management and product variants</li>
+            <li>Abandoned cart recovery</li>
+            <li>Shipping label printing and rate calculators</li>
+            <li>Advanced marketing automation</li>
+            <li><strong>Best for:</strong> Online stores, product-based businesses, dropshipping</li>
+          </ul>
+
+          <p><strong>The sweet spot for most users:</strong> A Business-tier plan at $20-35/month provides the best balance of features and cost. Upgrade to e-commerce only if you are selling physical or digital products.</p>
+        </div>
+
+        <div class="guide-section">
+          <h3>Website Builder vs Custom Development: Complete Breakdown</h3>
+          <p><strong>Understanding when a builder makes sense versus hiring a developer saves you time and money.</strong></p>
+
+          <p><strong>Website Builder (DIY)</strong></p>
+          <ul>
+            <li>Setup Time: <strong>1-7 days</strong></li>
+            <li>Upfront Cost: <strong>$0-$50</strong> (first month or free plan)</li>
+            <li>Monthly Cost: <strong>$10-$40/month</strong> (hosting included)</li>
+            <li>Annual Cost: <strong>$120-$480/year</strong></li>
+            <li>Maintenance: <strong>Self-service</strong> (builder handles updates and security)</li>
+            <li>Technical Skill: <strong>None required</strong></li>
+            <li><strong>Best for:</strong> Small businesses, portfolios, blogs, basic e-commerce, anyone without a development budget</li>
+          </ul>
+
+          <p><strong>Custom Development (Hire a Developer)</strong></p>
+          <ul>
+            <li>Setup Time: <strong>4-16 weeks</strong></li>
+            <li>Upfront Cost: <strong>$3,000-$50,000+</strong> (design and development)</li>
+            <li>Monthly Cost: <strong>$50-$300/month</strong> (hosting, maintenance, updates)</li>
+            <li>Annual Cost: <strong>$4,000-$55,000+/year</strong> (including ongoing development)</li>
+            <li>Maintenance: <strong>Requires developer</strong> (security patches, bug fixes, updates)</li>
+            <li>Technical Skill: <strong>Developer needed for changes</strong></li>
+            <li><strong>Best for:</strong> Complex web applications, unique functionality, enterprise sites, high-traffic platforms</li>
+          </ul>
+
+          <p><strong>The Verdict:</strong> For 90% of businesses, a website builder delivers everything you need at a fraction of the cost. Custom development only makes sense when you need functionality that no builder can provide, such as complex user dashboards, custom algorithms, or deeply integrated business systems.</p>
+        </div>
+
+        <div class="guide-section">
+          <h3>Choosing the Right Builder for Your Project Type</h3>
+          <p><strong>Different projects have different needs. Here is the best builder for each common use case:</strong></p>
+
+          <p><strong>Portfolio or Personal Website</strong></p>
+          <ul>
+            <li><strong>Best choice: Squarespace</strong> ($16/month)</li>
+            <li>Why: Most visually stunning templates, built-in gallery features, excellent for showcasing work</li>
+            <li>Runner-up: Wix (more customization options, free plan available)</li>
+          </ul>
+
+          <p><strong>Blog or Content Site</strong></p>
+          <ul>
+            <li><strong>Best choice: WordPress.com</strong> ($4-25/month)</li>
+            <li>Why: Most powerful content management, best SEO tools, 59,000+ plugins for any need</li>
+            <li>Runner-up: Squarespace (simpler setup, beautiful blog layouts)</li>
+          </ul>
+
+          <p><strong>E-commerce Store</strong></p>
+          <ul>
+            <li><strong>Best choice: Shopify</strong> ($39/month)</li>
+            <li>Why: Industry-leading e-commerce features, 8,000+ apps, handles any scale of inventory</li>
+            <li>Runner-up: Wix (lower cost, good for smaller stores)</li>
+          </ul>
+
+          <p><strong>Small Business Website</strong></p>
+          <ul>
+            <li><strong>Best choice: Wix</strong> ($17/month)</li>
+            <li>Why: Most flexible editor, 900+ templates, built-in booking and CRM tools</li>
+            <li>Runner-up: GoDaddy Builder (faster setup, all-in-one domain and hosting)</li>
+          </ul>
+
+          <p><strong>Budget-Conscious Project</strong></p>
+          <ul>
+            <li><strong>Best choice: Weebly</strong> (Free or $10/month)</li>
+            <li>Why: Generous free plan, built-in e-commerce, simple editor</li>
+            <li>Runner-up: WordPress.com (free plan available, most scalable long-term)</li>
+          </ul>
+
+          <p><em>When in doubt, start with the builder's free trial or free plan. You can always upgrade later, but switching builders entirely requires rebuilding your site.</em></p>
+        </div>
+
+        <div class="guide-section">
+          <h3>Free Plans vs Paid Plans: Real Cost Comparison</h3>
+          <p><strong>Free plans are tempting, but understand what you give up before committing.</strong></p>
+
+          <p><strong>What Free Plans Include:</strong></p>
+          <ul>
+            <li>Basic drag-and-drop editor and templates</li>
+            <li>Subdomain only (yoursite.wixsite.com, not yoursite.com)</li>
+            <li>Builder branding/ads displayed on your site</li>
+            <li>Limited storage (typically 500 MB - 1 GB)</li>
+            <li>Basic support (community forums, no priority)</li>
+          </ul>
+
+          <p><strong>What Free Plans Lack:</strong></p>
+          <ul>
+            <li>Custom domain (costs $10-15/year separately, but included in paid plans)</li>
+            <li>Ad-free experience for visitors</li>
+            <li>E-commerce functionality</li>
+            <li>Advanced SEO tools</li>
+            <li>Google Analytics integration</li>
+            <li>Priority customer support</li>
+            <li>Sufficient storage for media-heavy sites</li>
+          </ul>
+
+          <p><strong>The Real Cost of "Free":</strong></p>
+          <ul>
+            <li>Subdomain looks unprofessional and hurts SEO</li>
+            <li>Builder ads distract visitors and reduce trust</li>
+            <li>Limited storage means you will hit walls quickly</li>
+            <li>No e-commerce means no revenue generation</li>
+            <li><strong>Verdict:</strong> Free plans work for testing and personal projects. For anything business-related, invest in a paid plan starting at $10-17/month.</li>
+          </ul>
+
+          <p><strong>Best Free Plans Ranked:</strong></p>
+          <ul>
+            <li><strong>1. Wix Free:</strong> Most generous features, 500 MB storage, drag-and-drop editor</li>
+            <li><strong>2. WordPress.com Free:</strong> Best for blogging, 1 GB storage, thousands of themes</li>
+            <li><strong>3. Weebly Free:</strong> Includes basic e-commerce, 500 MB storage, Square integration</li>
+          </ul>
+
+          <p><em>Pro tip: Use free plans to test different builders before committing. Build your site on 2-3 platforms, compare the experience, then upgrade the one that feels right.</em></p>
+        </div>
+
+        <div class="guide-section">
+          <h3>Essential Features Checklist</h3>
+          <p><strong>Before choosing a builder, make sure it includes these features that matter most for a successful website.</strong></p>
+
+          <p><strong>Non-Negotiable Features (Every builder should have these):</strong></p>
+          <ul>
+            <li><strong>SSL Certificate:</strong> Encrypts your site. Required for SEO and visitor trust. All top builders include this free.</li>
+            <li><strong>Mobile Responsiveness:</strong> Your site must look great on phones. Over 60% of web traffic is mobile.</li>
+            <li><strong>Custom Domain:</strong> Use yourbusiness.com, not yourbusiness.wixsite.com. Available on all paid plans.</li>
+            <li><strong>SEO Tools:</strong> Meta titles, descriptions, alt tags, and sitemap generation. Essential for Google rankings.</li>
+            <li><strong>Reliable Uptime:</strong> 99.9% uptime guarantee. Downtime means lost visitors and revenue.</li>
+          </ul>
+
+          <p><strong>Important Features (Check before choosing):</strong></p>
+          <ul>
+            <li><strong>Blogging Capability:</strong> Even non-blog sites benefit from content marketing. WordPress.com and Squarespace lead here.</li>
+            <li><strong>Contact Forms:</strong> Let visitors reach you. All builders include basic forms, but check for advanced options.</li>
+            <li><strong>Social Media Integration:</strong> Connect your feeds, add share buttons, and drive engagement.</li>
+            <li><strong>Analytics:</strong> Track visitors, page views, and behavior. Google Analytics integration is a plus.</li>
+            <li><strong>Backup and Restore:</strong> Automatic backups protect against accidental changes. Not all builders offer this.</li>
+          </ul>
+
+          <p><strong>E-commerce Specific Features:</strong></p>
+          <ul>
+            <li><strong>Payment Processing:</strong> Accept credit cards, PayPal, Apple Pay. Shopify and Wix lead here.</li>
+            <li><strong>Inventory Management:</strong> Track stock levels, variants, and SKUs. Essential for product-based stores.</li>
+            <li><strong>Shipping Calculations:</strong> Real-time shipping rates save you money and reduce cart abandonment.</li>
+            <li><strong>Abandoned Cart Recovery:</strong> Automatically email customers who leave items in their cart. Recovers 5-15% of lost sales.</li>
+            <li><strong>Tax Calculations:</strong> Automatic sales tax calculation based on customer location. Saves hours of manual work.</li>
+          </ul>
+
+          <p><em>Create a checklist of features you need before comparing builders. This prevents getting distracted by flashy features you will never use.</em></p>
+        </div>
+
+        <div class="guide-section">
+          <h3>Common Mistakes (And What They'll Cost You)</h3>
+          <p><strong>These errors cost website owners time, money, and visitors. Here's how to avoid them:</strong></p>
+
+          <p><strong>Mistake #1: Choosing Based on Price Alone</strong></p>
+          <ul>
+            <li>The cheapest builder often lacks critical features you will need within 6 months</li>
+            <li>Migrating to a new platform later costs 10-40 hours of rebuilding</li>
+            <li>Example: Starting on a $4/month plan, then needing e-commerce features that require a $39/month platform</li>
+            <li><strong>Solution:</strong> Choose based on your 12-month needs, not just today's budget</li>
+          </ul>
+
+          <p><strong>Mistake #2: Ignoring Mobile Experience</strong></p>
+          <ul>
+            <li>Over 60% of web traffic comes from mobile devices in 2026</li>
+            <li>Google uses mobile-first indexing, meaning your mobile site determines your search ranking</li>
+            <li>A non-responsive site loses 50%+ of potential customers immediately</li>
+            <li><strong>Solution:</strong> Test every page on mobile before publishing. All top builders offer mobile preview.</li>
+          </ul>
+
+          <p><strong>Mistake #3: Skipping SEO Setup</strong></p>
+          <ul>
+            <li>Without basic SEO, your site is invisible to search engines</li>
+            <li>Missing meta descriptions, alt tags, and proper headings cost you organic traffic</li>
+            <li>Sites without SSL certificates are flagged as "Not Secure" by browsers</li>
+            <li><strong>Solution:</strong> Complete SEO settings for every page. Use the builder's built-in SEO tools.</li>
+          </ul>
+
+          <p><strong>Mistake #4: Not Setting Up Analytics</strong></p>
+          <ul>
+            <li>Without analytics, you are flying blind on what works and what does not</li>
+            <li>You cannot improve what you cannot measure</li>
+            <li>Free tools like Google Analytics provide invaluable visitor insights</li>
+            <li><strong>Solution:</strong> Connect Google Analytics on day one. Review data weekly.</li>
+          </ul>
+
+          <p><strong>Mistake #5: Overcomplicating Your Design</strong></p>
+          <ul>
+            <li>Cluttered pages increase bounce rates by 38%</li>
+            <li>Too many fonts, colors, and animations look unprofessional</li>
+            <li>Visitors decide in 3-5 seconds whether to stay or leave</li>
+            <li><strong>Solution:</strong> Start with a template and modify minimally. Less is more in web design.</li>
+          </ul>
+
+          <p><strong>Mistake #6: Forgetting About Page Speed</strong></p>
+          <ul>
+            <li>Each second of load time reduces conversions by 7%</li>
+            <li>Unoptimized images are the number one cause of slow websites</li>
+            <li>Google penalizes slow sites in search rankings</li>
+            <li><strong>Solution:</strong> Compress images before uploading. Use the builder's built-in image optimization. Test speed with Google PageSpeed Insights.</li>
+          </ul>
+
+          <p><strong>Mistake #7: Not Having a Backup Plan</strong></p>
+          <ul>
+            <li>Accidental deletions, hacks, or builder outages can erase your work</li>
+            <li>Not all builders offer automatic backups or version history</li>
+            <li>Rebuilding a site from scratch takes 20-80 hours</li>
+            <li><strong>Solution:</strong> Choose a builder with backup features. Export your content regularly. Keep copies of important images and text files.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ SECTION -->
+      <div id="faq" class="faq-section">
+        <h2 class="section-heading">Frequently Asked Questions</h2>
+        <p class="section-intro">Expert answers to common questions about website builders.</p>
+        <div class="faq-list">
+          {faqs.map((faq, index) => (
+            <details class="faq-item">
+              <summary class="faq-question">{faq.question}</summary>
+              <div class="faq-answer">
+                <p>{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- AUTHOR BIO -->
+      <div id="about-us" class="author-bio-section">
+        <img src={author.image} alt={author.name} class="author-bio-image" onerror="this.src='https://ui-avatars.com/api/?name=EJ&background=1a365d&color=fff&size=120'" />
+        <div class="author-bio-content">
+          <p class="author-bio-label">About the Author</p>
+          <h3 class="author-bio-name">{author.name}</h3>
+          <p class="author-bio-title">{author.title}</p>
+          <p class="author-bio-text">{author.bio}</p>
+        </div>
+      </div>
+
+      <!-- CONTACT SECTION -->
+      <div id="contact" class="contact-section">
+        <h2 class="contact-title">Contact Us</h2>
+        <p class="contact-text">Have questions about our reviews? We'd love to hear from you.</p>
+        <p class="contact-email">Email: <a href="mailto:contact@webbuildhub.co">contact@webbuildhub.co</a></p>
+      </div>
+
+    </div>
+  </article>
+
+</MainLayout>
+
+<style>
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* LIFE INSURANCE REVIEW PAGE STYLES - HomeBeeHub Design          */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* HERO SECTION                                                    */
+  /* ─────────────────────────────────────────────────────────────── */
+  .hero-section {
+    background: linear-gradient(180deg, #F7F8FA 0%, #FFFFFF 100%);
+    padding: 3rem 0 2rem;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .hero-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+    color: #68727C;
+  }
+  .category-tag {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .hero-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #162433;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .author-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .author-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .author-details { flex: 1; }
+  .author-name {
+    font-weight: 700;
+    color: #162433;
+    font-size: 0.9375rem;
+  }
+  .author-title {
+    font-size: 0.8125rem;
+    color: #68727C;
+  }
+  .author-date {
+    text-align: right;
+    font-size: 0.8125rem;
+    color: #68727C;
+  }
+  .author-date strong {
+    display: block;
+    color: #162433;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* TRUST SECTION                                                   */
+  /* ─────────────────────────────────────────────────────────────── */
+  .trust-section {
+    background: #FFFFFF;
+    padding: 1rem 0;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .trust-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #4B5563;
+  }
+  .trust-badge strong {
+    color: #1a365d;
+    font-weight: 700;
+  }
+  .trust-icon {
+    width: 18px;
+    height: 18px;
+    color: #22C55E;
+    flex-shrink: 0;
+  }
+  @media (max-width: 640px) {
+    .trust-badges { flex-direction: column; gap: 0.75rem; }
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* TOP 3 PICKS SECTION                                             */
+  /* ─────────────────────────────────────────────────────────────── */
+  .top-picks-section {
+    padding: 3rem 0;
+    background: #FFFFFF;
+  }
+  .top-picks-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .top-picks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: end;
+  }
+  /* Desktop order: 2nd, 1st (center), 3rd */
+  .top-pick-card:nth-child(1) { order: 1; } /* 2nd place - left */
+  .top-pick-card:nth-child(2) { order: 2; } /* 1st place - center */
+  .top-pick-card:nth-child(3) { order: 3; } /* 3rd place - right */
+
+  @media (max-width: 900px) {
+    .top-picks-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    /* Mobile order: 1st, 2nd, 3rd (vertical) */
+    .top-pick-card:nth-child(1) { order: 2; } /* 2nd place */
+    .top-pick-card:nth-child(2) { order: 1; } /* 1st place - FIRST on mobile */
+    .top-pick-card:nth-child(3) { order: 3; } /* 3rd place */
+    .top-pick-card.featured {
+      transform: none;
+    }
+  }
+  .top-pick-card {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .top-pick-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .top-pick-card.featured {
+    transform: translateY(-20px);
+    border: 2px solid #22C55E;
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);
+  }
+  .top-pick-card.featured:hover {
+    transform: translateY(-24px);
+  }
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.375rem 1rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .top-pick-logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .top-pick-logo img {
+    max-width: 180px;
+    max-height: 80px;
+    object-fit: contain;
+  }
+  .top-pick-best-for {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 0.75rem;
+  }
+  .top-pick-description {
+    font-size: 0.875rem;
+    color: #68727C;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    min-height: 4.5rem;
+  }
+  .top-pick-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .rating-number {
+    font-family: 'Sora', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #162433;
+  }
+  .stars-container {
+    display: flex;
+    gap: 2px;
+  }
+  .star-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .star-icon.full {
+    fill: #FBBF24;
+  }
+  .star-icon.empty {
+    fill: #E5E7EB;
+  }
+  .top-pick-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+  }
+  .top-pick-cta:hover {
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  }
+  .top-pick-cta:hover .arrow {
+    transform: translateX(3px);
+  }
+  .arrow {
+    transition: transform 0.2s ease;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* STICKY NAVIGATION (Screened.com style)                          */
+  /* ─────────────────────────────────────────────────────────────── */
+  .sticky-nav {
+    position: sticky;
+    top: 72px;
+    z-index: 40;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .sticky-nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4px;
+    padding: 6px;
+    background: linear-gradient(135deg, #0D2C4B 0%, #1a3a5c 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+  .sticky-nav-link {
+    flex: 1 1 0;
+    padding: 12px 8px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .sticky-nav-link:hover {
+    color: #ffffff;
+  }
+  .sticky-nav-link.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+  }
+  @media (max-width: 768px) {
+    .sticky-nav {
+      padding: 0.5rem 0.75rem;
+    }
+    .sticky-nav-container {
+      padding: 4px;
+      gap: 2px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-behavior: smooth;
+    }
+    .sticky-nav-container::-webkit-scrollbar {
+      display: none;
+    }
+    .sticky-nav-link {
+      padding: 10px 12px;
+      flex-shrink: 0;
+      flex: 0 0 auto;
+      font-size: 0.75rem;
+      white-space: nowrap;
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* MAIN CONTENT                                                    */
+  /* ─────────────────────────────────────────────────────────────── */
+  .editorial-content {
+    background: white;
+    padding: 3rem 0;
+  }
+  .content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .section-heading {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #162433;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #E5E7EB;
+    scroll-margin-top: 140px;
+  }
+  .section-intro,
+  .intro-text {
+    color: #4B5563;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* CRITERIA SECTION                                                */
+  /* ─────────────────────────────────────────────────────────────── */
+  .criteria-section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 140px;
+  }
+  .criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  @media (max-width: 640px) {
+    .criteria-grid { grid-template-columns: 1fr; }
+  }
+  .criteria-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .criteria-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .criteria-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .criteria-icon.green { background: #DCFCE7; color: #16A34A; }
+  .criteria-icon.blue { background: #DBEAFE; color: #2563EB; }
+  .criteria-icon.purple { background: #F3E8FF; color: #9333EA; }
+  .criteria-icon.orange { background: #FEF3C7; color: #D97706; }
+  .criteria-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 0.5rem;
+  }
+  .criteria-card p {
+    font-size: 0.875rem;
+    color: #68727C;
+    line-height: 1.5;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* METHODOLOGY SECTION                                             */
+  /* ─────────────────────────────────────────────────────────────── */
+  .methodology-section {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    scroll-margin-top: 140px;
+  }
+  .methodology-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #E5E7EB;
+  }
+  .methodology-intro {
+    color: #68727C;
+    margin-bottom: 1.5rem;
+  }
+  .methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  @media (max-width: 640px) {
+    .methodology-grid { grid-template-columns: 1fr; }
+  }
+  .methodology-card {
+    background: #FFFFFF;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+  }
+  .methodology-number {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+  }
+  .methodology-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 0.5rem;
+  }
+  .methodology-card p {
+    font-size: 0.875rem;
+    color: #68727C;
+    line-height: 1.5;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* EDITORIAL DISCLAIMER                                            */
+  /* ─────────────────────────────────────────────────────────────── */
+  .editorial-disclaimer {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .editorial-disclaimer a {
+    color: #9CA3AF;
+    text-decoration: underline;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* PRODUCT REVIEWS                                                 */
+  /* ─────────────────────────────────────────────────────────────── */
+  .reviews-section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 140px;
+  }
+  .review-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    scroll-margin-top: 140px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .review-card.editor-choice {
+    border: 2px solid #22C55E;
+  }
+  .editor-choice-banner {
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .editor-choice-banner::before {
+    content: '★';
+  }
+  .review-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 0;
+  }
+  @media (max-width: 768px) {
+    .review-layout {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .review-left {
+      text-align: center;
+    }
+  }
+  .review-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #F7F8FA;
+    padding: 1.5rem 1.25rem 2rem;
+    border-radius: 14px 0 0 14px;
+    gap: 0.875rem;
+  }
+  @media (max-width: 768px) {
+    .review-left {
+      border-radius: 0;
+      padding: 1.5rem;
+    }
+  }
+  .review-logo {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .review-logo img {
+    max-width: 140px;
+    max-height: 140px;
+    object-fit: contain;
+  }
+  .review-rating-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+  }
+  .rating-star {
+    color: #FBBF24;
+    font-size: 1.25rem;
+  }
+  .rating-large {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #162433;
+  }
+  .rating-max {
+    font-size: 1rem;
+    color: #68727C;
+    font-weight: 500;
+  }
+  .review-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 190px;
+    padding: 0.75rem 1.25rem;
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  .review-cta:hover {
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  }
+  .review-cta:hover .arrow {
+    transform: translateX(3px);
+  }
+  .review-cta-subtext {
+    font-size: 0.8125rem;
+    color: #68727C;
+    text-align: center;
+  }
+  .review-right {
+    flex: 1;
+    position: relative;
+    padding: 1.5rem 2rem;
+  }
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .review-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #162433;
+    margin: 0;
+  }
+  .review-rank {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #1a365d;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+  }
+  .review-best-for {
+    display: inline-block;
+    background: #EBF5FF;
+    color: #1a365d;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+    border: 1.5px solid #BFDBFE;
+    margin-bottom: 1.25rem;
+  }
+  .spec-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0;
+    margin-bottom: 1.25rem;
+    background: #F1F3F4;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+  .spec-box {
+    padding: 0.5rem 0.75rem;
+    border-right: 1px solid #E2E8F0;
+  }
+  .spec-box:last-child {
+    border-right: none;
+  }
+  @media (max-width: 640px) {
+    .spec-boxes {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .spec-box {
+      border-right: none;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .spec-box:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+  }
+  .spec-label {
+    display: block;
+    font-size: 0.6875rem;
+    color: #68727C;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+  .spec-value {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #162433;
+  }
+  .review-description {
+    font-size: 0.9375rem;
+    color: #4B5563;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Pros & Cons Accordion */
+  .pros-cons-accordion {
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .accordion-trigger {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: #FFFFFF;
+    font-weight: 700;
+    color: #162433;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .accordion-trigger::-webkit-details-marker {
+    display: none;
+  }
+  .accordion-trigger::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+  details[open] .accordion-trigger::after {
+    content: '−';
+  }
+  .accordion-content {
+    padding: 1.25rem;
+    background: white;
+  }
+  .pros-section,
+  .cons-section {
+    margin-bottom: 1rem;
+  }
+  .cons-section {
+    margin-bottom: 0;
+  }
+  .pros-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #16A34A;
+    margin-bottom: 0.75rem;
+  }
+  .cons-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #DC2626;
+    margin-bottom: 0.75rem;
+  }
+  .pros-list,
+  .cons-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pros-list li,
+  .cons-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #4B5563;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+  .check {
+    color: #16A34A;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .x {
+    color: #DC2626;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* COMPARISON TABLE                                                */
+  /* ─────────────────────────────────────────────────────────────── */
+  .comparison-section {
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    scroll-margin-top: 140px;
+  }
+  .table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+  }
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  .comparison-table thead th {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .comparison-table thead th:first-child {
+    border-radius: 12px 0 0 0;
+  }
+  .comparison-table thead th:last-child {
+    border-radius: 0 12px 0 0;
+  }
+  .comparison-table tbody tr {
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .comparison-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  .comparison-table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+  }
+  .product-cell {
+    min-width: 180px;
+  }
+  .table-editor-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  .product-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .table-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #FFFFFF;
+  }
+  .table-product-name {
+    font-weight: 600;
+    color: #162433;
+  }
+  .best-for-badge {
+    display: inline-block;
+    background: #EBF5FF;
+    color: #1a365d;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+  .spec-cell {
+    font-weight: 600;
+    color: #162433;
+  }
+  .rating-cell {
+    font-weight: 700;
+    color: #162433;
+  }
+  .table-cta {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .table-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* DECISION GUIDE                                                  */
+  /* ─────────────────────────────────────────────────────────────── */
+  .decision-guide {
+    margin-bottom: 3rem;
+    scroll-margin-top: 140px;
+  }
+  .guide-intro {
+    font-size: 1rem;
+    color: #4B5563;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+  .guide-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .guide-section:last-child {
+    border-bottom: none;
+  }
+  .guide-section h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 1rem;
+  }
+  .guide-section p {
+    font-size: 0.9375rem;
+    color: #4B5563;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .guide-section ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .guide-section li {
+    font-size: 0.9375rem;
+    color: #4B5563;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+  .guide-section strong {
+    color: #162433;
+  }
+  .guide-section em {
+    color: #68727C;
+    font-style: italic;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* FAQ SECTION                                                     */
+  /* ─────────────────────────────────────────────────────────────── */
+  .faq-section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 140px;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .faq-item {
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: #FFFFFF;
+    font-weight: 600;
+    color: #162433;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+  .faq-question::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #68727C;
+  }
+  details[open] .faq-question::after {
+    content: '−';
+  }
+  .faq-answer {
+    padding: 1.25rem;
+    background: white;
+  }
+  .faq-answer p {
+    font-size: 0.9375rem;
+    color: #4B5563;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* AUTHOR BIO                                                      */
+  /* ─────────────────────────────────────────────────────────────── */
+  .author-bio-section {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    margin-top: 3rem;
+    scroll-margin-top: 140px;
+  }
+  @media (max-width: 640px) {
+    .author-bio-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  .author-bio-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .author-bio-content {
+    flex: 1;
+  }
+  .author-bio-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #68727C;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+  }
+  .author-bio-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #162433;
+    margin: 0 0 0.25rem;
+  }
+  .author-bio-title {
+    font-size: 0.875rem;
+    color: #68727C;
+    margin-bottom: 0.75rem;
+  }
+  .author-bio-text {
+    font-size: 0.9375rem;
+    color: #4B5563;
+    line-height: 1.6;
+  }
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* CONTACT SECTION                                                 */
+  /* ─────────────────────────────────────────────────────────────── */
+  .contact-section {
+    padding: 2rem;
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    margin-top: 2rem;
+    text-align: center;
+    scroll-margin-top: 140px;
+  }
+  .contact-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 1rem;
+  }
+  .contact-text {
+    font-size: 1rem;
+    color: #4B5563;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .contact-email {
+    font-size: 1rem;
+    color: #4B5563;
+  }
+  .contact-email a {
+    color: #1a365d;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  // Sticky nav active state with auto-scroll on mobile
+  const navLinks = document.querySelectorAll('.sticky-nav-link');
+  const navContainer = document.getElementById('nav-scroll-container');
+  // IMPORTANT: sectionIds must be in DOM order (top to bottom on page), not menu display order
+  const sectionIds = ['how-to-choose', 'methodology', 'top-builders', 'compare', 'buying-guide', 'faq'];
+
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 200;
+    let currentSection = 'how-to-choose';
+
+    sectionIds.forEach(id => {
+      const section = document.getElementById(id);
+      if (section && section.offsetTop <= scrollPos) {
+        currentSection = id;
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('data-section') === currentSection) {
+        link.classList.add('active');
+        // Auto-scroll nav container on mobile to show active link
+        if (navContainer && window.innerWidth <= 768) {
+          const linkRect = link.getBoundingClientRect();
+          const containerRect = navContainer.getBoundingClientRect();
+          const scrollLeft = link.offsetLeft - (containerRect.width / 2) + (linkRect.width / 2);
+          navContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+        }
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav);
+  window.addEventListener('load', updateActiveNav);
+  window.addEventListener('resize', updateActiveNav);
+
+  // Smooth scroll for nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href')?.substring(1);
+      const targetSection = document.getElementById(targetId || '');
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+<!-- Cache bust: 1772289600 -->

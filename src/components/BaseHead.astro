@@ -1,0 +1,151 @@
+---
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  🧩 BASE HEAD - SEO meta tags for all pages                   ║
+// ║  Optimized for brand name ranking + dynamic favicon           ║
+// ╚═══════════════════════════════════════════════════════════════╝
+import '../styles/global.css';
+import { SITE_TITLE, SITE_BRAND, SITE_DESCRIPTION, SITE_URL, SITE_AUTHOR, TWITTER_HANDLE, SITE_LANGUAGE } from '../consts';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title, description, image = '/og-image.svg', type = 'website', noindex = false } = Astro.props;
+const imageUrl = new URL(image, Astro.site).toString();
+
+// Get first letter of site name for dynamic favicon
+const firstLetter = SITE_TITLE.charAt(0).toUpperCase();
+
+// Schema.org Organization data for brand SEO
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": SITE_BRAND,
+  "url": SITE_URL,
+  "logo": `${SITE_URL}/og-image.svg`,
+  "sameAs": TWITTER_HANDLE ? [`https://twitter.com/${TWITTER_HANDLE.replace('@', '')}`] : []
+};
+
+// Schema.org WebSite data for search (controls site name in Google)
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": SITE_BRAND,
+  "alternateName": SITE_TITLE,
+  "url": SITE_URL,
+  "description": SITE_DESCRIPTION,
+  "publisher": {
+    "@type": "Organization",
+    "name": SITE_BRAND
+  }
+};
+
+// Build breadcrumb schema for hierarchy (helps Google show organized sitelinks)
+const currentPath = Astro.url.pathname;
+const pathSegments = currentPath.split('/').filter(seg => seg !== '');
+const breadcrumbItems = [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": SITE_BRAND,
+    "item": SITE_URL
+  }
+];
+
+// Add current page to breadcrumb if not homepage
+if (pathSegments.length > 0) {
+  const pageNames: Record<string, string> = {
+    'about': 'About Us',
+    'contact': 'Contact Us',
+    'privacy': 'Privacy Policy',
+    'terms': 'Terms of Use',
+    'disclaimer': 'Disclaimer',
+    'blog': 'Blog'
+  };
+  
+  const pageName = pageNames[pathSegments[0]] || title;
+  breadcrumbItems.push({
+    "@type": "ListItem",
+    "position": 2,
+    "name": pageName,
+    "item": `${SITE_URL}/${pathSegments[0]}`
+  });
+}
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems
+};
+---
+
+<!-- 🌐 Global Meta -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#1E2E5C" />
+
+<!-- 🏷️ Brand Identity Meta (for brand name ranking) -->
+<meta name="application-name" content={SITE_BRAND} />
+<meta name="apple-mobile-web-app-title" content={SITE_BRAND} />
+<meta name="msapplication-TileColor" content="#1E2E5C" />
+
+<!-- 🔖 Dynamic Favicon (Circle + First Letter) -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+
+<!-- 🔗 Sitemap -->
+<link rel="sitemap" href="/sitemap.xml" />
+
+<!-- 🔤 Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+
+<!-- 🔗 Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- 🤖 Robots -->
+{noindex ? (
+  <meta name="robots" content="noindex, nofollow" />
+) : (
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+)}
+
+<!-- 📝 Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="author" content={SITE_AUTHOR} />
+<meta name="generator" content={Astro.generator} />
+
+<!-- 📘 Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content={SITE_BRAND} />
+<meta property="og:locale" content={SITE_LANGUAGE.replace('-', '_')} />
+
+<!-- 🐦 Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={TWITTER_HANDLE} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<!-- 🏢 Schema.org Organization (Brand SEO) -->
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+<!-- 🌐 Schema.org WebSite (Search SEO) -->
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
+<!-- 🍞 Schema.org BreadcrumbList (Page Hierarchy for Sitelinks) -->
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

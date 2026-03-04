@@ -1,0 +1,85 @@
+---
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  📄 PRIVACY POLICY PAGE                                       ║
+// ╚═══════════════════════════════════════════════════════════════╝
+import MainLayout from '../layouts/MainLayout.astro';
+import { SITE_BRAND } from '../consts';
+const currentYear = new Date().getFullYear();
+const emailDomain = 'webbuildhub.co';
+---
+
+<MainLayout title="Privacy Policy" description={`${SITE_BRAND} privacy policy.`}>
+  <section class="legal-hero">
+    <div class="hero-container">
+      <h1>Privacy Policy</h1>
+      <p class="hero-date">Last updated: January {currentYear}</p>
+    </div>
+  </section>
+
+  <section class="legal-content">
+    <div class="content-container">
+      <div class="legal-prose">
+        <p class="intro-text">
+          <strong>{SITE_BRAND} respects your privacy and is committed to protecting your personal data.</strong>
+        </p>
+
+        <h2>Information We Collect</h2>
+        <p>When you visit our website, we automatically collect certain information:</p>
+        <ul>
+          <li><strong>Device Information:</strong> Device type, operating system, browser type</li>
+          <li><strong>Usage Data:</strong> Pages viewed, time spent, links clicked</li>
+          <li><strong>Location Data:</strong> General location based on IP address</li>
+        </ul>
+
+        <h2>Cookies</h2>
+        <p>We use cookies to analyze trends and improve our website:</p>
+        <ul>
+          <li><strong>Essential Cookies:</strong> Required for site operation</li>
+          <li><strong>Analytics Cookies:</strong> Help us understand visitor behavior</li>
+          <li><strong>Advertising Cookies:</strong> Used to deliver relevant ads</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <ul>
+          <li>To deliver content and services you request</li>
+          <li>To improve our website</li>
+          <li>To comply with legal obligations</li>
+        </ul>
+
+        <h2>Your Rights</h2>
+        <ul>
+          <li>Right to know what personal information we collect</li>
+          <li>Right to request deletion of your information</li>
+          <li>Right to opt-out of data sharing</li>
+        </ul>
+
+        <h2>Contact Us</h2>
+        <div class="contact-box">
+          <p><strong>{SITE_BRAND}</strong></p>
+          <p>Email: <a href={`mailto:privacy@${emailDomain}`}>privacy@{emailDomain}</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .legal-hero { background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); padding: 3rem 0; }
+  .hero-container { max-width: 48rem; margin: 0 auto; padding: 0 2rem; text-align: center; }
+  .hero-container h1 { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 700; color: white !important; margin-bottom: 0.5rem; }
+  .hero-date { color: rgba(255, 255, 255, 0.8); }
+  .legal-content { padding: 4rem 0; background: white; }
+  .content-container { max-width: 48rem; margin: 0 auto; padding: 0 2rem; }
+  .legal-prose { font-family: 'Poppins', sans-serif; color: #374151; line-height: 1.8; }
+  .legal-prose .intro-text { background: #F3F4F6; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; border-left: 4px solid #1a365d; }
+  .legal-prose h2 { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 700; color: #162433; margin-top: 2.5rem; margin-bottom: 1rem; }
+  .legal-prose p { margin-bottom: 1.25rem; }
+  .legal-prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+  .legal-prose li { margin-bottom: 0.5rem; }
+  .legal-prose a { color: #3B82F6; text-decoration: underline; }
+  .legal-prose strong { color: #162433; }
+  .contact-box { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.5rem; padding: 1.5rem; margin: 1.5rem 0; }
+  .contact-box p { margin-bottom: 0.5rem; }
+  .contact-box p:last-child { margin-bottom: 0; }
+  @media (max-width: 768px) { .hero-container h1 { font-size: 2rem; } .legal-content { padding: 2rem 0; } }
+</style>

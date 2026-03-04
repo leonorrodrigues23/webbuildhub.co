@@ -1,0 +1,97 @@
+---
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  📄 DISCLAIMER PAGE - Includes affiliate disclosure           ║
+// ╚═══════════════════════════════════════════════════════════════╝
+import MainLayout from '../layouts/MainLayout.astro';
+import { SITE_BRAND } from '../consts';
+const currentYear = new Date().getFullYear();
+const emailDomain = 'webbuildhub.co';
+---
+
+<MainLayout title="Disclaimer" description={`Important disclaimers about ${SITE_BRAND}.`}>
+  <section class="legal-hero">
+    <div class="hero-container">
+      <h1>Disclaimer</h1>
+      <p class="hero-date">Last updated: January {currentYear}</p>
+    </div>
+  </section>
+
+  <section class="legal-content">
+    <div class="content-container">
+      <div class="legal-prose">
+        <p class="intro-text warning">
+          <strong>⚠️ IMPORTANT: Please read this disclaimer carefully before using {SITE_BRAND}.</strong>
+        </p>
+
+        <h2>General Information Disclaimer</h2>
+        <p>Information on {SITE_BRAND} is for <strong>general informational purposes only</strong>. It is not professional advice. We make no warranties about completeness or accuracy.</p>
+
+        <h2 id="affiliate">Affiliate and Advertising Disclosure</h2>
+        <div class="disclaimer-box affiliate">
+          <h3>How We Make Money</h3>
+          <p><strong>{SITE_BRAND} earns money through affiliate partnerships.</strong> When you click links and purchase products, we may receive compensation.</p>
+          <ul>
+            <li><strong>Compensation does not influence</strong> which products we feature</li>
+            <li><strong>Compensation does not affect</strong> product rankings or order</li>
+            <li>Our rankings are based solely on research, testing, and editorial judgment</li>
+            <li>We maintain complete editorial independence</li>
+            <li>Not all products or companies are represented</li>
+            <li>Our opinions and recommendations remain unbiased regardless of affiliate relationships</li>
+          </ul>
+        </div>
+
+        <h2>Product Information</h2>
+        <ul>
+          <li><strong>Prices and availability change</strong> without notice</li>
+          <li><strong>Specifications vary</strong> between models</li>
+          <li>Always verify with the retailer before purchasing</li>
+        </ul>
+
+        <h2>Your Responsibility</h2>
+        <ul>
+          <li>You are responsible for evaluating products for your needs</li>
+          <li>Verify all information with providers</li>
+          <li>Your purchasing decisions are your own</li>
+        </ul>
+
+        <h2>Limitation of Liability</h2>
+        <p class="legal-caps">
+          {SITE_BRAND.toUpperCase()} SHALL NOT BE LIABLE FOR ANY DAMAGES ARISING FROM USE OF THIS WEBSITE OR INFORMATION PROVIDED HEREIN.
+        </p>
+
+        <h2>Contact</h2>
+        <div class="contact-box">
+          <p><strong>{SITE_BRAND}</strong></p>
+          <p>Email: <a href={`mailto:legal@${emailDomain}`}>legal@{emailDomain}</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .legal-hero { background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); padding: 3rem 0; }
+  .hero-container { max-width: 48rem; margin: 0 auto; padding: 0 2rem; text-align: center; }
+  .hero-container h1 { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 700; color: white !important; margin-bottom: 0.5rem; }
+  .hero-date { color: rgba(255, 255, 255, 0.8); }
+  .legal-content { padding: 4rem 0; background: white; }
+  .content-container { max-width: 48rem; margin: 0 auto; padding: 0 2rem; }
+  .legal-prose { font-family: 'Poppins', sans-serif; color: #374151; line-height: 1.8; }
+  .legal-prose .intro-text { background: #F3F4F6; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; border-left: 4px solid #1a365d; }
+  .legal-prose .intro-text.warning { background: #FEF3C7; border-left-color: #F59E0B; }
+  .legal-prose h2 { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 700; color: #162433; margin-top: 2.5rem; margin-bottom: 1rem; scroll-margin-top: 2rem; }
+  .legal-prose h3 { font-family: 'Sora', sans-serif; font-size: 1.125rem; font-weight: 600; color: #162433; margin-bottom: 0.75rem; }
+  .legal-prose p { margin-bottom: 1.25rem; }
+  .legal-prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+  .legal-prose li { margin-bottom: 0.5rem; }
+  .legal-prose a { color: #3B82F6; text-decoration: underline; }
+  .legal-prose strong { color: #162433; }
+  .disclaimer-box { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1.5rem; margin: 1.5rem 0; }
+  .disclaimer-box.affiliate { border-left: 4px solid #EC4899; background: #FDF2F8; }
+  .disclaimer-box h3 { margin-top: 0; }
+  .legal-caps { font-size: 0.8125rem; background: #F3F4F6; padding: 1.5rem; border-radius: 0.5rem; }
+  .contact-box { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.5rem; padding: 1.5rem; margin: 1.5rem 0; }
+  .contact-box p { margin-bottom: 0.5rem; }
+  .contact-box p:last-child { margin-bottom: 0; }
+  @media (max-width: 768px) { .hero-container h1 { font-size: 2rem; } .legal-content { padding: 2rem 0; } }
+</style>

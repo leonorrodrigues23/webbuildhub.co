@@ -1,0 +1,34 @@
+# Robots.txt for LifePlanify.co
+# Last updated: February 2026
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.lifeplanify.co/sitemap.xml
+
+# Crawl-delay suggestion for polite crawlers
+Crawl-delay: 1
+
+# Block access to admin or sensitive areas (if any)
+Disallow: /api/
+Disallow: /_astro/
+
+# Allow all major search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /

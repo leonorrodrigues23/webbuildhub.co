@@ -1,0 +1,140 @@
+---
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  📄 ABOUT US PAGE - WebBuildHub                               ║
+// ╚═══════════════════════════════════════════════════════════════╝
+import MainLayout from '../layouts/MainLayout.astro';
+import { SITE_BRAND } from '../consts';
+---
+
+<MainLayout title="About Us" description={`Learn about ${SITE_BRAND} - our mission, team, and commitment to honest website builder reviews.`}>
+  <section class="about-hero">
+    <div class="hero-container">
+      <h1>About {SITE_BRAND}</h1>
+      <p class="hero-subtitle">Your trusted source for honest, expert website builder reviews</p>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="content-container">
+
+      <!-- Mission Section -->
+      <div class="about-section">
+        <h2>Our Mission</h2>
+        <p>
+          We believe everyone deserves access to honest, unbiased information about website builders.
+          Our mission is simple: <strong>help you make confident decisions about building your online presence</strong> by providing
+          thoroughly researched reviews you can trust.
+        </p>
+        <p>
+          We know how overwhelming it can be to choose between dozens of website building platforms.
+          That's why we do the hard work for you, testing features, comparing pricing, and delivering clear recommendations.
+        </p>
+      </div>
+
+      <!-- How We Test Section -->
+      <div class="about-section">
+        <h2>How We Test</h2>
+        <div class="testing-grid">
+          <div class="testing-card">
+            <div class="testing-icon">🔬</div>
+            <h3>Hands-On Testing</h3>
+            <p>We build real websites on every platform we review. No secondhand opinions or rehashed specs, just real-world experience with every builder.</p>
+          </div>
+          <div class="testing-card">
+            <div class="testing-icon">📊</div>
+            <h3>Data-Driven Analysis</h3>
+            <p>We analyze thousands of customer reviews, performance benchmarks, and usability metrics to validate our findings.</p>
+          </div>
+          <div class="testing-card">
+            <div class="testing-icon">🔄</div>
+            <h3>Regular Updates</h3>
+            <p>Website builders update constantly, and so do our reviews. We continuously re-test platforms as new features launch.</p>
+          </div>
+          <div class="testing-card">
+            <div class="testing-icon">⚖️</div>
+            <h3>Fair Comparisons</h3>
+            <p>We test every platform under the same conditions, using standardized criteria so you can compare apples to apples.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editorial Independence Section -->
+      <div class="about-section">
+        <h2>Editorial Independence</h2>
+        <div class="independence-box">
+          <p>
+            <strong>Our reviews are completely independent.</strong> While we may earn commissions from affiliate
+            links, this never influences our rankings or recommendations. Our editorial team operates separately
+            from our business team, and no company can pay for a favorable review.
+          </p>
+          <p>
+            This model allows us to keep our content free while maintaining complete editorial integrity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Our Values Section -->
+      <div class="about-section">
+        <h2>Our Values</h2>
+        <ul class="values-list">
+          <li><strong>Honesty:</strong> We tell it like it is, even when it's not what platforms want to hear.</li>
+          <li><strong>Transparency:</strong> We disclose our testing methodology and affiliate relationships openly.</li>
+          <li><strong>Expertise:</strong> Our team brings years of web design and development experience to every review.</li>
+          <li><strong>Consumer Focus:</strong> Every decision we make starts with "How does this help our readers?"</li>
+        </ul>
+      </div>
+
+      <!-- Contact CTA -->
+      <div class="about-cta">
+        <h2>Have Questions?</h2>
+        <p>We'd love to hear from you. Whether you have a question about our methodology, want to suggest a platform for review, or just want to say hello.</p>
+        <a href="/contact" class="cta-button">Contact Us</a>
+      </div>
+
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .about-hero { background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); padding: 4rem 0; }
+  .hero-container { max-width: 48rem; margin: 0 auto; padding: 0 2rem; text-align: center; }
+  .hero-container h1 { font-family: 'Sora', sans-serif; font-size: 2.75rem; font-weight: 700; color: white !important; margin-bottom: 0.75rem; }
+  .hero-subtitle { font-family: 'Poppins', sans-serif; font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); }
+
+  .about-content { padding: 4rem 0; background: white; }
+  .content-container { max-width: 48rem; margin: 0 auto; padding: 0 2rem; }
+
+  .about-section { margin-bottom: 3.5rem; }
+  .about-section h2 { font-family: 'Sora', sans-serif; font-size: 1.75rem; font-weight: 700; color: #162433; margin-bottom: 1.25rem; }
+  .about-section p { font-family: 'Poppins', sans-serif; font-size: 1.0625rem; color: #374151; line-height: 1.8; margin-bottom: 1rem; }
+  .about-section strong { color: #162433; }
+
+  .testing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+  .testing-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1.5rem; }
+  .testing-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .testing-card h3 { font-family: 'Sora', sans-serif; font-size: 1.125rem; font-weight: 600; color: #162433; margin-bottom: 0.5rem; }
+  .testing-card p { font-family: 'Poppins', sans-serif; font-size: 0.9375rem; color: #4B5563; line-height: 1.6; margin-bottom: 0; }
+
+  .independence-box { background: #EEF2FF; border-left: 4px solid #4F46E5; border-radius: 0.5rem; padding: 1.5rem; }
+  .independence-box p { margin-bottom: 1rem; }
+  .independence-box p:last-child { margin-bottom: 0; }
+
+  .values-list { list-style: none; padding: 0; margin: 0; }
+  .values-list li { font-family: 'Poppins', sans-serif; font-size: 1.0625rem; color: #374151; line-height: 1.8; padding: 0.75rem 0; border-bottom: 1px solid #E5E7EB; }
+  .values-list li:last-child { border-bottom: none; }
+  .values-list strong { color: #1a365d; }
+
+  .about-cta { text-align: center; background: #F9FAFB; border-radius: 1rem; padding: 2.5rem; margin-top: 3rem; }
+  .about-cta h2 { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 700; color: #162433; margin-bottom: 0.75rem; }
+  .about-cta p { font-family: 'Poppins', sans-serif; font-size: 1rem; color: #4B5563; margin-bottom: 1.5rem; max-width: 32rem; margin-left: auto; margin-right: auto; }
+  .cta-button { display: inline-block; background: #1a365d; color: white; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 0.5rem; text-decoration: none; transition: background 0.2s ease; }
+  .cta-button:hover { background: #2c5282; }
+
+  @media (max-width: 768px) {
+    .hero-container h1 { font-size: 2rem; }
+    .hero-subtitle { font-size: 1.125rem; }
+    .about-content { padding: 2.5rem 0; }
+    .testing-grid { grid-template-columns: 1fr; }
+    .about-cta { padding: 2rem 1.5rem; }
+  }
+</style>

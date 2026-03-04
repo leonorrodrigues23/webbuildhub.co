@@ -1,0 +1,79 @@
+---
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  📄 TERMS OF USE PAGE                                         ║
+// ╚═══════════════════════════════════════════════════════════════╝
+import MainLayout from '../layouts/MainLayout.astro';
+import { SITE_BRAND } from '../consts';
+const currentYear = new Date().getFullYear();
+const emailDomain = 'webbuildhub.co';
+---
+
+<MainLayout title="Terms of Use" description={`${SITE_BRAND} terms and conditions.`}>
+  <section class="legal-hero">
+    <div class="hero-container">
+      <h1>Terms of Use</h1>
+      <p class="hero-date">Last updated: January {currentYear}</p>
+    </div>
+  </section>
+
+  <section class="legal-content">
+    <div class="content-container">
+      <div class="legal-prose">
+        <p class="intro-text">
+          <strong>Welcome to {SITE_BRAND}. By using our website, you agree to these Terms of Use.</strong>
+        </p>
+
+        <h2>Informational Purposes Only</h2>
+        <p>Our website is for informational purposes only. You are responsible for your own decisions. Our content does not consider your personal situation.</p>
+
+        <h2>We Are Not A Service Provider</h2>
+        <p>We do not sell products or provide services directly. Service providers are solely responsible for products they provide.</p>
+
+        <h2>Intellectual Property</h2>
+        <p>All content on our website is protected by copyright and trademark law. Unauthorized use is prohibited.</p>
+
+        <h2>User Conduct</h2>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Use our website for unlawful purposes</li>
+          <li>Attempt unauthorized access to our systems</li>
+          <li>Use automated devices to access our website</li>
+          <li>Introduce viruses or malicious code</li>
+        </ul>
+
+        <h2>Limitation of Liability</h2>
+        <p class="legal-caps">
+          {SITE_BRAND.toUpperCase()} SHALL NOT BE LIABLE FOR ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM USE OF THIS WEBSITE.
+        </p>
+
+        <h2>Contact</h2>
+        <div class="contact-box">
+          <p><strong>{SITE_BRAND}</strong></p>
+          <p>Email: <a href={`mailto:legal@${emailDomain}`}>legal@{emailDomain}</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .legal-hero { background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); padding: 3rem 0; }
+  .hero-container { max-width: 48rem; margin: 0 auto; padding: 0 2rem; text-align: center; }
+  .hero-container h1 { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 700; color: white !important; margin-bottom: 0.5rem; }
+  .hero-date { color: rgba(255, 255, 255, 0.8); }
+  .legal-content { padding: 4rem 0; background: white; }
+  .content-container { max-width: 48rem; margin: 0 auto; padding: 0 2rem; }
+  .legal-prose { font-family: 'Poppins', sans-serif; color: #374151; line-height: 1.8; }
+  .legal-prose .intro-text { background: #F3F4F6; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; border-left: 4px solid #1a365d; }
+  .legal-prose h2 { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 700; color: #162433; margin-top: 2.5rem; margin-bottom: 1rem; }
+  .legal-prose p { margin-bottom: 1.25rem; }
+  .legal-prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+  .legal-prose li { margin-bottom: 0.5rem; }
+  .legal-prose a { color: #3B82F6; text-decoration: underline; }
+  .legal-prose strong { color: #162433; }
+  .legal-caps { font-size: 0.8125rem; background: #F3F4F6; padding: 1.5rem; border-radius: 0.5rem; }
+  .contact-box { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.5rem; padding: 1.5rem; margin: 1.5rem 0; }
+  .contact-box p { margin-bottom: 0.5rem; }
+  .contact-box p:last-child { margin-bottom: 0; }
+  @media (max-width: 768px) { .hero-container h1 { font-size: 2rem; } .legal-content { padding: 2rem 0; } }
+</style>

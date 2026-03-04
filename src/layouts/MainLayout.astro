@@ -1,0 +1,46 @@
+---
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  📐 MAIN LAYOUT - Wraps all pages with header & footer        ║
+// ╚═══════════════════════════════════════════════════════════════╝
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_BRAND, SITE_DESCRIPTION, SITE_LANGUAGE } from '../consts';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const { 
+  title, 
+  description = SITE_DESCRIPTION, 
+  image,
+  noindex = false
+} = Astro.props;
+
+// Brand-first title format for SEO
+// Homepage: "Best Life Insurance 2026 by LifePlanify - Compare & Save"
+// Other pages: "LifePlanify | Page Title"
+const isHomepage = title === SITE_TITLE || Astro.url.pathname === '/';
+const pageTitle = isHomepage 
+  ? SITE_TITLE
+  : `${SITE_BRAND} | ${title}`;
+---
+
+<!doctype html>
+<html lang={SITE_LANGUAGE.split('-')[0]} dir="ltr">
+  <head>
+    <BaseHead title={pageTitle} description={description} image={image} noindex={noindex} />
+  </head>
+  <body class="flex flex-col min-h-screen bg-white">
+    <Header />
+    <main id="main-content" class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+

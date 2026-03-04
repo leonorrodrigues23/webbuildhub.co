@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <ellipse cx="40" cy="40" rx="30" ry="25" fill="#C41230"/>
+  <text x="26" y="46" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">F</text>
+  <text x="80" y="35" font-family="Arial, sans-serif" font-size="14" fill="#1F2937">FARMERS</text>
+  <text x="80" y="52" font-family="Arial, sans-serif" font-size="12" fill="#C41230">INSURANCE</text>
+</svg>

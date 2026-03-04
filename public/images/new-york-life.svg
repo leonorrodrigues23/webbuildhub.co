@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect x="10" y="10" width="60" height="60" fill="#0033A0"/>
+  <text x="20" y="38" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="white">NEW</text>
+  <text x="20" y="55" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="white">YORK</text>
+  <text x="80" y="48" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#0033A0">Life</text>
+</svg>

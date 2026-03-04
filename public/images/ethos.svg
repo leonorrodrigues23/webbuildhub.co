@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <defs>
+    <linearGradient id="eth-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <circle cx="35" cy="40" r="25" fill="url(#eth-grad)"/>
+  <text x="27" y="47" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">E</text>
+  <text x="70" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F2937">ethos</text>
+</svg>

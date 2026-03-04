@@ -1,0 +1,330 @@
+---
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  📰 BLOG LAYOUT - Wraps all blog posts with consistent style  ║
+// ╚═══════════════════════════════════════════════════════════════╝
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_BRAND, SITE_LANGUAGE } from '../consts';
+
+interface Props {
+  title: string;
+  description: string;
+  publishDate: string;
+  author: string;
+  authorTitle: string;
+  authorImage: string;
+  readingTime: string;
+  category?: string;
+}
+
+const { 
+  title, 
+  description, 
+  publishDate,
+  author,
+  authorTitle,
+  authorImage,
+  readingTime,
+  category = "Website Builders"
+} = Astro.props;
+
+const pageTitle = `${title} | ${SITE_BRAND} Blog`;
+---
+
+<!doctype html>
+<html lang={SITE_LANGUAGE.split('-')[0]} dir="ltr">
+  <head>
+    <BaseHead title={pageTitle} description={description} />
+  </head>
+  <body class="flex flex-col min-h-screen bg-white">
+    <Header />
+    <main id="main-content" class="flex-grow">
+      <!-- Blog Hero -->
+      <section class="blog-hero">
+        <div class="blog-hero-container">
+          <div class="blog-meta">
+            <span class="blog-category">{category}</span>
+            <span class="separator">•</span>
+            <span class="reading-time">{readingTime}</span>
+          </div>
+          <h1 class="blog-title">{title}</h1>
+          <p class="blog-description">{description}</p>
+          <div class="author-card">
+            <img src={authorImage} alt={author} class="author-image" onerror="this.src='https://ui-avatars.com/api/?name=EJ&background=1a365d&color=fff&size=96'" />
+            <div class="author-details">
+              <div class="author-name">{author}</div>
+              <div class="author-title">{authorTitle}</div>
+            </div>
+            <div class="author-date">
+              <span>Published</span>
+              <strong>{publishDate}</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Content -->
+      <article class="blog-content">
+        <div class="blog-container">
+          <slot />
+          
+          <!-- CTA Box -->
+          <div class="cta-box">
+            <h3>Ready to Build Your Perfect Website?</h3>
+            <p>Compare the top-rated website builders and start building in minutes.</p>
+            <a href="/" class="cta-button">Compare Top Builders →</a>
+          </div>
+
+          <!-- Author Bio -->
+          <div class="author-bio">
+            <img src={authorImage} alt={author} class="author-bio-image" onerror="this.src='https://ui-avatars.com/api/?name=EJ&background=1a365d&color=fff&size=120'" />
+            <div class="author-bio-content">
+              <p class="author-bio-label">About the Author</p>
+              <h3 class="author-bio-name">{author}</h3>
+              <p class="author-bio-title">{authorTitle}</p>
+              <p class="author-bio-text">Expert web technology writer helping businesses and individuals make informed decisions about website builders. Dedicated to simplifying complex web design topics.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  /* Blog Hero */
+  .blog-hero {
+    background: linear-gradient(180deg, #F7F8FA 0%, #FFFFFF 100%);
+    padding: 3rem 0 2rem;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .blog-hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+    color: #68727C;
+  }
+  .blog-category {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .blog-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #162433;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .blog-description {
+    font-size: 1.125rem;
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .author-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .author-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .author-details { flex: 1; }
+  .author-name {
+    font-weight: 700;
+    color: #162433;
+    font-size: 0.9375rem;
+  }
+  .author-title {
+    font-size: 0.8125rem;
+    color: #68727C;
+  }
+  .author-date {
+    text-align: right;
+    font-size: 0.8125rem;
+    color: #68727C;
+  }
+  .author-date strong {
+    display: block;
+    color: #162433;
+  }
+
+  /* Blog Content */
+  .blog-content {
+    background: white;
+    padding: 3rem 0;
+  }
+  .blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .blog-container :global(h2) {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #162433;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #E5E7EB;
+  }
+  .blog-container :global(h3) {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #162433;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .blog-container :global(p) {
+    font-size: 1rem;
+    color: #4B5563;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+  .blog-container :global(ul),
+  .blog-container :global(ol) {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .blog-container :global(li) {
+    font-size: 1rem;
+    color: #4B5563;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+  }
+  .blog-container :global(strong) {
+    color: #162433;
+    font-weight: 600;
+  }
+  .blog-container :global(a) {
+    color: #1a365d;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  .blog-container :global(a:hover) {
+    color: #2c5282;
+  }
+  .blog-container :global(blockquote) {
+    border-left: 4px solid #22C55E;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #4B5563;
+  }
+
+  /* CTA Box */
+  .cta-box {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    margin: 3rem 0;
+  }
+  .cta-box h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+  .cta-box p {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+  }
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+  }
+
+  /* Author Bio */
+  .author-bio {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    margin-top: 3rem;
+  }
+  @media (max-width: 640px) {
+    .author-bio {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  .author-bio-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .author-bio-content {
+    flex: 1;
+  }
+  .author-bio-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #68727C;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+  }
+  .author-bio-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #162433;
+    margin: 0 0 0.25rem;
+  }
+  .author-bio-title {
+    font-size: 0.875rem;
+    color: #68727C;
+    margin-bottom: 0.75rem;
+  }
+  .author-bio-text {
+    font-size: 0.9375rem;
+    color: #4B5563;
+    line-height: 1.6;
+  }
+</style>

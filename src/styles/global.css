@@ -1,0 +1,63 @@
+/* ╔═══════════════════════════════════════════════════════════════╗ */
+/* ║  🎨 GLOBAL STYLES - Base styling for the entire site          ║ */
+/* ╚═══════════════════════════════════════════════════════════════╝ */
+
+@import "tailwindcss";
+
+/* 🎨 Theme Variables */
+@theme {
+  --color-primary: #0D2C4B;
+  --color-secondary: #162433;
+  --color-accent: #146aff;
+  --color-text: #162433;
+  --color-muted: #68727C;
+  --color-light: #F7F8FA;
+  --color-border: #E6E8EB;
+  --font-sora: 'Sora', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* 📝 Base Styles */
+body {
+  font-family: var(--font-poppins);
+  color: var(--color-text);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sora);
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 🔗 Button Styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #0D2C4B;
+  color: #FFFFFF !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1a3d5c;
+}
+
