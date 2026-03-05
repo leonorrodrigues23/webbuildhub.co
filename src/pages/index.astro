@@ -652,257 +652,447 @@ function getStarRating(rating: number) {
         <h2 class="section-heading">Website Builder Decision Guide: What You Actually Need to Know</h2>
         <p class="guide-intro">Verified 2026 data, real costs, and honest comparisons. Everything you need to make a confident decision.</p>
 
-        <div class="guide-section">
-          <h3>What It Actually Takes to Build a Website Without a Builder</h3>
-          <p><strong>Before you dismiss website builders as an unnecessary expense, here is every single thing you would need to handle yourself to get a professional website online:</strong></p>
-
-          <p><strong>Step 1: Domain and Hosting Setup</strong></p>
-          <ul>
-            <li>Register a domain name ($12-15/year)</li>
-            <li>Research and purchase web hosting ($5-30/month)</li>
-            <li>Configure DNS records to point your domain to your server</li>
-            <li>Set up an SSL certificate for HTTPS encryption (required by Google since 2018)</li>
-            <li>Configure your web server (Apache, Nginx, or similar)</li>
-            <li><strong>Time required:</strong> 4-8 hours if you know what you are doing. Days if you do not.</li>
-          </ul>
-
-          <p><strong>Step 2: Design and Development</strong></p>
-          <ul>
-            <li>Learn HTML, CSS, and JavaScript (the three core languages of every website)</li>
-            <li>Understand responsive design so your site works on phones, tablets, and desktops — over 62% of web traffic is mobile in 2026</li>
-            <li>Design a professional layout (color theory, typography, spacing, visual hierarchy)</li>
-            <li>Code every single page by hand: homepage, about page, contact page, blog, product pages</li>
-            <li>Build a navigation system that works across all screen sizes</li>
-            <li>Create and optimize all images (compression, correct dimensions, WebP format)</li>
-            <li>Test on at least 8-10 device sizes and 3-4 browsers (Chrome, Safari, Firefox, Edge)</li>
-            <li><strong>Time required:</strong> 200-500+ hours to learn the skills. 40-120 hours to build one site.</li>
-          </ul>
-
-          <p><strong>Step 3: Essential Features You Need to Build From Scratch</strong></p>
-          <ul>
-            <li>Contact forms with spam protection and email delivery</li>
-            <li>SEO setup: meta tags, Open Graph tags, structured data markup, XML sitemaps, robots.txt</li>
-            <li>Analytics integration (Google Analytics, Search Console)</li>
-            <li>Cookie consent banners (legally required in the EU and increasingly elsewhere)</li>
-            <li>Image optimization and lazy loading for performance</li>
-            <li>Accessibility compliance (screen readers, keyboard navigation, contrast ratios)</li>
-            <li><strong>Time required:</strong> 20-60 hours per feature, depending on complexity.</li>
-          </ul>
-
-          <p><strong>Step 4: If You Need E-commerce (Selling Anything Online)</strong></p>
-          <ul>
-            <li>Integrate a payment gateway (Stripe, PayPal) and handle PCI compliance for secure card processing</li>
-            <li>Build a product catalog with images, descriptions, variants, and pricing</li>
-            <li>Create a shopping cart and checkout flow</li>
-            <li>Set up inventory tracking so you do not oversell</li>
-            <li>Configure shipping rate calculations based on weight, destination, and carrier</li>
-            <li>Implement automatic tax calculations for every state and country you sell to</li>
-            <li>Build an order management system (confirmation emails, tracking, refunds)</li>
-            <li>Set up abandoned cart recovery emails (this alone recovers 5-15% of lost sales)</li>
-            <li><strong>Time required:</strong> 200-600 hours. This is where most DIY projects fail.</li>
-          </ul>
-
-          <p><strong>Step 5: Ongoing Maintenance (Forever)</strong></p>
-          <ul>
-            <li>Security monitoring and patching (new vulnerabilities are discovered weekly)</li>
-            <li>Regular backups and disaster recovery testing</li>
-            <li>Server updates and software dependency management</li>
-            <li>Performance monitoring and optimization</li>
-            <li>Content updates (every change requires editing code or a CMS you built)</li>
-            <li>Bug fixes when things break after browser or device updates</li>
-            <li><strong>Time required:</strong> 5-20 hours per month, every month, indefinitely.</li>
-          </ul>
-
-          <p><strong>The total reality:</strong> Building a professional website from scratch requires <strong>300-800+ hours of work</strong> and ongoing technical skills. That is 8-20 full work weeks before your site goes live. A website builder gives you all of this — professionally built, tested, secured, and maintained — for $16-39 per month.</p>
+        <!-- SECTION 1: What It Takes Without a Builder -->
+        <div class="guide-block">
+          <h3 class="guide-block-title">What It Actually Takes to Build a Website Without a Builder</h3>
+          <p class="guide-block-subtitle">Before you dismiss website builders as an unnecessary expense, here is every step you would need to handle yourself.</p>
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-header">
+                <span class="step-number">1</span>
+                <h4>Domain &amp; Hosting Setup</h4>
+              </div>
+              <ul class="step-list">
+                <li>Register a domain ($12-15/year) and purchase hosting ($5-30/month)</li>
+                <li>Configure DNS records, SSL certificate, and web server</li>
+                <li>Set up email forwarding and security basics</li>
+              </ul>
+              <div class="step-time">4-8 hours minimum</div>
+            </div>
+            <div class="step-card">
+              <div class="step-header">
+                <span class="step-number">2</span>
+                <h4>Design &amp; Development</h4>
+              </div>
+              <ul class="step-list">
+                <li>Learn HTML, CSS, and JavaScript — the three core web languages</li>
+                <li>Build responsive layouts for phones, tablets, and desktops (62% of traffic is mobile)</li>
+                <li>Code every page by hand and test across browsers</li>
+              </ul>
+              <div class="step-time">200-500+ hours to learn, 40-120 hours to build</div>
+            </div>
+            <div class="step-card">
+              <div class="step-header">
+                <span class="step-number">3</span>
+                <h4>Essential Features</h4>
+              </div>
+              <ul class="step-list">
+                <li>Contact forms, SEO meta tags, XML sitemaps, structured data</li>
+                <li>Analytics integration, cookie consent, accessibility compliance</li>
+                <li>Image optimization, performance tuning, security headers</li>
+              </ul>
+              <div class="step-time">20-60 hours per feature</div>
+            </div>
+            <div class="step-card">
+              <div class="step-header">
+                <span class="step-number">4</span>
+                <h4>E-commerce (If Selling)</h4>
+              </div>
+              <ul class="step-list">
+                <li>Payment gateway, PCI compliance, product catalog, shopping cart</li>
+                <li>Inventory tracking, shipping rates, tax calculations</li>
+                <li>Order management, confirmation emails, abandoned cart recovery</li>
+              </ul>
+              <div class="step-time">200-600 hours — where most DIY projects fail</div>
+            </div>
+            <div class="step-card">
+              <div class="step-header">
+                <span class="step-number">5</span>
+                <h4>Ongoing Maintenance</h4>
+              </div>
+              <ul class="step-list">
+                <li>Security patches, backups, server updates — new vulnerabilities weekly</li>
+                <li>Performance monitoring, bug fixes after browser updates</li>
+                <li>Every content change requires editing code or a custom CMS</li>
+              </ul>
+              <div class="step-time">5-20 hours/month, forever</div>
+            </div>
+          </div>
+          <div class="guide-verdict-box">
+            <strong>The total reality:</strong> 300-800+ hours of work (8-20 full work weeks) before your site goes live — plus ongoing technical maintenance. A website builder gives you all of this for <strong>$16-39/month</strong>.
+          </div>
         </div>
 
-        <div class="guide-section">
-          <h3>Website Builder vs Going It Alone: The Real Numbers</h3>
-          <p><strong>Here is what each path actually costs when you add everything up:</strong></p>
-
-          <p><strong>Using a Website Builder</strong></p>
-          <ul>
-            <li>Time to launch: <strong>1-7 days</strong></li>
-            <li>Technical skills needed: <strong>None</strong></li>
-            <li>First-year cost: <strong>$192-$468</strong> ($16-$39/month, hosting and SSL included)</li>
-            <li>Ongoing cost: <strong>$16-$39/month</strong> (everything included)</li>
-            <li>Maintenance: <strong>Handled for you</strong> (security, updates, backups, uptime)</li>
-            <li>Making changes: <strong>Drag and drop</strong>, live in minutes</li>
-            <li>E-commerce: <strong>Built in</strong> with payment processing, inventory, shipping, and tax tools</li>
-            <li>Support: <strong>24/7</strong> via chat, email, and phone on most platforms</li>
-          </ul>
-
-          <p><strong>Hiring a Web Developer</strong></p>
-          <ul>
-            <li>Time to launch: <strong>4-16 weeks</strong></li>
-            <li>Technical skills needed: <strong>None</strong> (but you are dependent on someone else's schedule)</li>
-            <li>First-year cost: <strong>$5,000-$55,000+</strong> (design, development, hosting, maintenance)</li>
-            <li>Ongoing cost: <strong>$100-$500/month</strong> (hosting, maintenance, updates, and change requests)</li>
-            <li>Maintenance: <strong>Requires your developer</strong> (if they are unavailable, your site is stuck)</li>
-            <li>Making changes: <strong>Submit a request</strong>, wait days or weeks, pay per change</li>
-            <li>E-commerce: <strong>Custom-built</strong> at significant additional cost ($10,000-$50,000+)</li>
-            <li>Support: <strong>Depends on your developer's availability and contract</strong></li>
-          </ul>
-
-          <p><strong>Building It Yourself (DIY Code)</strong></p>
-          <ul>
-            <li>Time to launch: <strong>2-6 months</strong> (including learning time)</li>
-            <li>Technical skills needed: <strong>HTML, CSS, JavaScript, server administration, security</strong></li>
-            <li>First-year cost: <strong>$200-$600</strong> (hosting, domain, tools) + <strong>300-800 hours of your time</strong></li>
-            <li>Ongoing cost: <strong>$10-$50/month</strong> + <strong>5-20 hours/month</strong> of your time for maintenance</li>
-            <li>Maintenance: <strong>All on you</strong> (security patches, backups, bug fixes, server updates)</li>
-            <li>Making changes: <strong>Edit code</strong>, redeploy, debug if anything breaks</li>
-            <li>E-commerce: <strong>Months of additional development</strong> for a basic setup</li>
-            <li>Support: <strong>Stack Overflow and documentation</strong></li>
-          </ul>
-
-          <p><strong>The bottom line:</strong> A website builder costs $16-$39/month and gets you online this week. Hiring a developer costs $5,000+ and takes months. Building it yourself costs hundreds of hours you could spend running your business. For the vast majority of businesses, freelancers, and creators, a website builder is the clear winner.</p>
+        <!-- SECTION 2: Builder vs DIY vs Developer -->
+        <div class="guide-block">
+          <h3 class="guide-block-title">Website Builder vs Going It Alone: The Real Numbers</h3>
+          <p class="guide-block-subtitle">Here is what each path actually costs when you add everything up.</p>
+          <div class="compare-cards">
+            <div class="compare-card compare-winner">
+              <div class="compare-card-label">Recommended</div>
+              <h4>Website Builder</h4>
+              <div class="compare-stats">
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Time to launch</span>
+                  <span class="compare-stat-value">1-7 days</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Technical skills</span>
+                  <span class="compare-stat-value">None</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">First-year cost</span>
+                  <span class="compare-stat-value">$192-$468</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Monthly cost</span>
+                  <span class="compare-stat-value">$16-$39</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Maintenance</span>
+                  <span class="compare-stat-value">Handled for you</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Making changes</span>
+                  <span class="compare-stat-value">Drag &amp; drop</span>
+                </div>
+              </div>
+            </div>
+            <div class="compare-card">
+              <h4>Hire a Developer</h4>
+              <div class="compare-stats">
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Time to launch</span>
+                  <span class="compare-stat-value">4-16 weeks</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Technical skills</span>
+                  <span class="compare-stat-value">None (dependent on dev)</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">First-year cost</span>
+                  <span class="compare-stat-value">$5,000-$55,000+</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Monthly cost</span>
+                  <span class="compare-stat-value">$100-$500</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Maintenance</span>
+                  <span class="compare-stat-value">Requires developer</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Making changes</span>
+                  <span class="compare-stat-value">Submit request, wait</span>
+                </div>
+              </div>
+            </div>
+            <div class="compare-card">
+              <h4>Build It Yourself</h4>
+              <div class="compare-stats">
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Time to launch</span>
+                  <span class="compare-stat-value">2-6 months</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Technical skills</span>
+                  <span class="compare-stat-value">HTML, CSS, JS, servers</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">First-year cost</span>
+                  <span class="compare-stat-value">$200-$600 + 500hrs</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Monthly cost</span>
+                  <span class="compare-stat-value">$10-$50 + your time</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Maintenance</span>
+                  <span class="compare-stat-value">All on you</span>
+                </div>
+                <div class="compare-stat">
+                  <span class="compare-stat-label">Making changes</span>
+                  <span class="compare-stat-value">Edit code, redeploy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="guide-verdict-box">
+            <strong>The bottom line:</strong> A website builder costs $16-$39/month and gets you online this week. Hiring a developer costs $5,000+ and takes months. Building it yourself costs hundreds of hours you could spend running your business.
+          </div>
         </div>
 
-        <div class="guide-section">
-          <h3>What Should You Actually Pay? (Verified 2026 Pricing)</h3>
-          <p><strong>All prices verified as of March 2026. Prices shown are for annual billing (the most common choice).</strong></p>
+        <!-- SECTION 3: Pricing -->
+        <div class="guide-block">
+          <h3 class="guide-block-title">What Should You Actually Pay? (Verified 2026 Pricing)</h3>
+          <p class="guide-block-subtitle">All prices verified as of March 2026. Shown for annual billing (the most common choice).</p>
 
-          <p><strong>Entry-Level Plans (Portfolios, blogs, personal sites):</strong></p>
-          <ul>
-            <li>WordPress.com: <strong>$4/month</strong> (Personal — limited features, WordPress ads displayed)</li>
-            <li>Weebly: <strong>$10/month</strong> (Personal — custom domain, basic e-commerce, 3% transaction fee)</li>
-            <li>GoDaddy Builder: <strong>$11.99/month</strong> (Basic — AI builder, free domain, SSL included)</li>
-            <li>Squarespace: <strong>$16/month</strong> (Basic — unlimited pages, SEO tools, Blueprint AI)</li>
-            <li>Wix: <strong>$17/month</strong> (Light — custom domain, 2 GB storage, basic marketing)</li>
-            <li>Shopify: <strong>$39/month</strong> (Basic — full e-commerce, unlimited products, 24/7 support. Currently <strong>$1/month for 3 months</strong> promo)</li>
-          </ul>
+          <div class="pricing-group">
+            <h4 class="pricing-group-title">Entry-Level Plans</h4>
+            <p class="pricing-group-desc">Portfolios, blogs, and personal sites</p>
+            <div class="pricing-items">
+              <div class="pricing-item">
+                <span class="pricing-name">WordPress.com</span>
+                <span class="pricing-detail">Personal — limited features, WP ads shown</span>
+                <span class="pricing-price">$4/mo</span>
+              </div>
+              <div class="pricing-item">
+                <span class="pricing-name">Weebly</span>
+                <span class="pricing-detail">Personal — custom domain, basic e-commerce, 3% fee</span>
+                <span class="pricing-price">$10/mo</span>
+              </div>
+              <div class="pricing-item">
+                <span class="pricing-name">GoDaddy</span>
+                <span class="pricing-detail">Basic — AI builder, free domain, SSL included</span>
+                <span class="pricing-price">$11.99/mo</span>
+              </div>
+              <div class="pricing-item">
+                <span class="pricing-name">Squarespace</span>
+                <span class="pricing-detail">Basic — unlimited pages, SEO tools, Blueprint AI</span>
+                <span class="pricing-price">$16/mo</span>
+              </div>
+              <div class="pricing-item">
+                <span class="pricing-name">Wix</span>
+                <span class="pricing-detail">Light — custom domain, 2 GB storage, marketing</span>
+                <span class="pricing-price">$17/mo</span>
+              </div>
+              <div class="pricing-item pricing-item-highlight">
+                <span class="pricing-name">Shopify</span>
+                <span class="pricing-detail">Basic — full e-commerce, unlimited products, 24/7 support</span>
+                <span class="pricing-price">$39/mo</span>
+                <span class="pricing-promo">$1/mo for 3 months</span>
+              </div>
+            </div>
+          </div>
 
-          <p><strong>Business-Ready Plans (E-commerce, marketing, analytics):</strong></p>
-          <ul>
-            <li>Weebly: <strong>$12/month</strong> (Professional — phone support, shipping calculator, advanced stats)</li>
-            <li>GoDaddy Builder: <strong>$15.99/month</strong> (Standard — email marketing, social media scheduling)</li>
-            <li>Squarespace: <strong>$23/month</strong> (Core — 0% transaction fees, advanced analytics, integrations)</li>
-            <li>WordPress.com: <strong>$25/month</strong> (Business — full plugin access, advanced SEO)</li>
-            <li>Wix: <strong>$36/month</strong> (Business — accept payments, multiple currencies, automated sales tax)</li>
-            <li>Shopify: <strong>$39/month</strong> (Basic already includes full e-commerce — this is why Shopify is #1. Other builders charge $20-36/month extra to match what Shopify includes from day one)</li>
-          </ul>
+          <div class="pricing-group">
+            <h4 class="pricing-group-title">Business-Ready Plans</h4>
+            <p class="pricing-group-desc">E-commerce, marketing tools, and advanced analytics</p>
+            <div class="pricing-items">
+              <div class="pricing-item">
+                <span class="pricing-name">Weebly</span>
+                <span class="pricing-detail">Professional — phone support, shipping, stats</span>
+                <span class="pricing-price">$12/mo</span>
+              </div>
+              <div class="pricing-item">
+                <span class="pricing-name">GoDaddy</span>
+                <span class="pricing-detail">Standard — email marketing, social scheduling</span>
+                <span class="pricing-price">$15.99/mo</span>
+              </div>
+              <div class="pricing-item">
+                <span class="pricing-name">Squarespace</span>
+                <span class="pricing-detail">Core — 0% transaction fees, integrations</span>
+                <span class="pricing-price">$23/mo</span>
+              </div>
+              <div class="pricing-item">
+                <span class="pricing-name">WordPress.com</span>
+                <span class="pricing-detail">Business — full plugin access, advanced SEO</span>
+                <span class="pricing-price">$25/mo</span>
+              </div>
+              <div class="pricing-item">
+                <span class="pricing-name">Wix</span>
+                <span class="pricing-detail">Business — payments, multi-currency, auto tax</span>
+                <span class="pricing-price">$36/mo</span>
+              </div>
+              <div class="pricing-item pricing-item-highlight">
+                <span class="pricing-name">Shopify</span>
+                <span class="pricing-detail">Basic already includes full e-commerce — no upgrade needed</span>
+                <span class="pricing-price">$39/mo</span>
+                <span class="pricing-promo">Same plan, everything built in</span>
+              </div>
+            </div>
+          </div>
 
-          <p><strong>How to save 20-30% instantly:</strong></p>
-          <ul>
-            <li>All builders offer significant discounts for annual billing versus monthly</li>
-            <li>Squarespace: Save 30% annually ($16/mo vs $21/mo monthly billing)</li>
-            <li>Wix: Save 25% annually</li>
-            <li>Shopify: Save 25% annually ($29/mo billed yearly instead of $39/mo monthly)</li>
-            <li><strong>Always start with a free trial</strong> — Squarespace offers 14 days, Shopify offers 3 days (at $1/month for 3 months after), and Wix, WordPress.com, and Weebly have permanent free plans</li>
-          </ul>
+          <div class="guide-tip-box">
+            <strong>Save 20-30%:</strong> All builders discount annual billing. Squarespace saves 30%, Wix and Shopify save 25%. Always start with a free trial before committing.
+          </div>
         </div>
 
-        <div class="guide-section">
-          <h3>Which Builder Fits Your Situation</h3>
-          <p><strong>Skip the guesswork. Based on our testing, here is exactly what to choose based on what you are building:</strong></p>
-
-          <p><strong>You want to sell products or services online →</strong></p>
-          <ul>
-            <li><strong>Go with Shopify</strong> ($39/month)</li>
-            <li>Full e-commerce on every plan. 8,000+ apps for anything you need: dropshipping, subscriptions, digital downloads, bookings. Handles 1 product or 100,000. Payment processing, inventory, shipping, and taxes are built in — no upgrades, no plugins, no surprises.</li>
-            <li><strong>Why not the others:</strong> Wix, Squarespace, and Weebly require upgrading to more expensive plans to unlock basic selling features. By the time you match Shopify's e-commerce capabilities, you are paying the same or more.</li>
-          </ul>
-
-          <p><strong>You are a creative professional showcasing your work →</strong></p>
-          <ul>
-            <li><strong>Go with Squarespace</strong> ($16/month)</li>
-            <li>The most visually polished templates of any builder. Built-in gallery layouts, portfolio pages, and scheduling tools. Every template is mobile-responsive and looks professional without any design skills.</li>
-            <li><strong>Why not the others:</strong> Wix offers more customization but it is easier to create a messy design. Squarespace's curated approach means even a beginner's site looks stunning.</li>
-          </ul>
-
-          <p><strong>You are building a blog or content-driven site →</strong></p>
-          <ul>
-            <li><strong>Go with WordPress.com</strong> ($4-25/month)</li>
-            <li>The most powerful content management system available. 59,000+ plugins, thousands of themes, and SEO tools that no other builder matches. Powers 43% of all websites on the internet.</li>
-            <li><strong>The trade-off:</strong> Steeper learning curve. Full functionality requires the Business plan ($25/month). If simplicity matters more, Squarespace is easier with excellent blog features.</li>
-          </ul>
-
-          <p><strong>You need a business website with booking or CRM tools →</strong></p>
-          <ul>
-            <li><strong>Go with Wix</strong> ($17-36/month)</li>
-            <li>Most flexible drag-and-drop editor with 900+ templates. Built-in appointment booking, CRM, invoicing, and automation tools. The best all-rounder for service-based businesses.</li>
-            <li><strong>The trade-off:</strong> You cannot switch templates after publishing. E-commerce requires the $36/month Business plan.</li>
-          </ul>
-
-          <p><strong>You just need something simple and affordable →</strong></p>
-          <ul>
-            <li><strong>Go with Weebly</strong> (Free or $10/month)</li>
-            <li>Straightforward editor, generous free plan, and integrated Square payment processing. Good enough for a basic business site or small online store.</li>
-            <li><strong>The trade-off:</strong> Limited templates (40+), fewer design options, and development has slowed since the Square acquisition. If your needs grow, you will likely outgrow Weebly.</li>
-          </ul>
-
-          <p><strong>You need to get online today with zero effort →</strong></p>
-          <ul>
-            <li><strong>Go with GoDaddy Builder</strong> ($11.99/month)</li>
-            <li>AI creates your initial site design based on your business type. Domain, hosting, email, and SSL are all bundled. You can have a working site in under an hour.</li>
-            <li><strong>The trade-off:</strong> Least flexible of all builders. Fewer features and integrations. You get speed and simplicity at the cost of long-term capability.</li>
-          </ul>
-
-          <p><em>Still unsure? Start with Shopify if you plan to sell anything, Squarespace if visual impact matters most, or Wix if you want the most flexibility. All three offer free trials — test before you commit.</em></p>
+        <!-- SECTION 4: Which Builder Fits -->
+        <div class="guide-block">
+          <h3 class="guide-block-title">Which Builder Fits Your Situation</h3>
+          <p class="guide-block-subtitle">Skip the guesswork. Based on our testing, here is exactly what to choose.</p>
+          <div class="rec-cards">
+            <div class="rec-card rec-shopify">
+              <div class="rec-card-header">
+                <span class="rec-card-use">Selling products or services online</span>
+                <span class="rec-card-price">$39/mo</span>
+              </div>
+              <h4>Go with Shopify</h4>
+              <p>Full e-commerce on every plan. 8,000+ apps for dropshipping, subscriptions, digital downloads, and bookings. Handles 1 product or 100,000 with payment processing, inventory, shipping, and taxes built in.</p>
+              <p class="rec-card-note"><strong>Why not the others:</strong> Wix, Squarespace, and Weebly require upgrading to pricier plans for basic selling features. By the time you match Shopify, you pay the same or more.</p>
+            </div>
+            <div class="rec-card rec-squarespace">
+              <div class="rec-card-header">
+                <span class="rec-card-use">Creative professionals &amp; portfolios</span>
+                <span class="rec-card-price">$16/mo</span>
+              </div>
+              <h4>Go with Squarespace</h4>
+              <p>The most visually polished templates of any builder. Built-in galleries, portfolio pages, and scheduling tools. Every template is mobile-responsive and looks professional without design skills.</p>
+              <p class="rec-card-note"><strong>Why not the others:</strong> Wix offers more customization but makes it easy to create cluttered designs. Squarespace's curated approach means even beginners look stunning.</p>
+            </div>
+            <div class="rec-card rec-wordpress">
+              <div class="rec-card-header">
+                <span class="rec-card-use">Blogs &amp; content-driven sites</span>
+                <span class="rec-card-price">$4-25/mo</span>
+              </div>
+              <h4>Go with WordPress.com</h4>
+              <p>The most powerful CMS available. 59,000+ plugins, thousands of themes, and SEO tools no other builder matches. Powers 43% of all websites on the internet.</p>
+              <p class="rec-card-note"><strong>Trade-off:</strong> Steeper learning curve. Full functionality requires the $25/month Business plan. For simplicity, Squarespace blogs are easier.</p>
+            </div>
+            <div class="rec-card rec-wix">
+              <div class="rec-card-header">
+                <span class="rec-card-use">Business sites with booking &amp; CRM</span>
+                <span class="rec-card-price">$17-36/mo</span>
+              </div>
+              <h4>Go with Wix</h4>
+              <p>Most flexible drag-and-drop editor with 900+ templates. Built-in appointment booking, CRM, invoicing, and automation tools. The best all-rounder for service businesses.</p>
+              <p class="rec-card-note"><strong>Trade-off:</strong> Cannot switch templates after publishing. E-commerce requires the $36/month Business plan.</p>
+            </div>
+            <div class="rec-card rec-weebly">
+              <div class="rec-card-header">
+                <span class="rec-card-use">Simple &amp; affordable</span>
+                <span class="rec-card-price">Free-$10/mo</span>
+              </div>
+              <h4>Go with Weebly</h4>
+              <p>Straightforward editor, generous free plan, and integrated Square payments. Good for a basic business site or small store on a tight budget.</p>
+              <p class="rec-card-note"><strong>Trade-off:</strong> Limited templates (40+), fewer design options. Development has slowed since the Square acquisition.</p>
+            </div>
+            <div class="rec-card rec-godaddy">
+              <div class="rec-card-header">
+                <span class="rec-card-use">Get online today, zero effort</span>
+                <span class="rec-card-price">$11.99/mo</span>
+              </div>
+              <h4>Go with GoDaddy Builder</h4>
+              <p>AI creates your site design in minutes. Domain, hosting, email, and SSL are bundled. Have a working site in under an hour.</p>
+              <p class="rec-card-note"><strong>Trade-off:</strong> Least flexible builder with fewer features and integrations. Speed and simplicity at the cost of long-term capability.</p>
+            </div>
+          </div>
+          <div class="guide-tip-box">
+            <strong>Still unsure?</strong> Start with Shopify if you plan to sell anything, Squarespace if visual impact matters most, or Wix for maximum flexibility. All three offer free trials.
+          </div>
         </div>
 
-        <div class="guide-section">
-          <h3>What to Look For Before You Choose</h3>
-          <p><strong>Every builder on our list covers the basics — SSL, mobile-responsive templates, and a drag-and-drop editor. Here are the features that actually differentiate them:</strong></p>
-
-          <p><strong>For any website:</strong></p>
-          <ul>
-            <li><strong>Custom domain support</strong> (yourbusiness.com, not yourbusiness.wixsite.com) — available on all paid plans</li>
-            <li><strong>Built-in SEO tools</strong> — meta titles, descriptions, alt tags, and automatic sitemaps. This is how Google finds your site.</li>
-            <li><strong>Mobile preview and editing</strong> — 62% of your visitors will be on phones. If your site looks bad on mobile, you lose them.</li>
-            <li><strong>24/7 support</strong> — when something breaks at 11 PM, you need help now, not tomorrow. Shopify and GoDaddy lead here.</li>
-            <li><strong>Regular backups</strong> — protects you from accidental deletions. Squarespace and Shopify handle this automatically.</li>
-          </ul>
-
-          <p><strong>If you are selling online (non-negotiable):</strong></p>
-          <ul>
-            <li><strong>Built-in payment processing</strong> — credit cards, PayPal, Apple Pay, Google Pay. Shopify supports 100+ payment providers.</li>
-            <li><strong>Inventory management</strong> — track stock across locations, manage variants (sizes, colors), get low-stock alerts.</li>
-            <li><strong>Abandoned cart recovery</strong> — automatically emails customers who left without buying. Recovers 5-15% of lost revenue.</li>
-            <li><strong>Automatic tax calculation</strong> — sales tax rules vary by state and country. Manual calculation is a compliance risk.</li>
-            <li><strong>Shipping integrations</strong> — real-time carrier rates, label printing, and tracking. Saves hours per week on fulfillment.</li>
-          </ul>
+        <!-- SECTION 5: Features Checklist -->
+        <div class="guide-block">
+          <h3 class="guide-block-title">What to Look For Before You Choose</h3>
+          <p class="guide-block-subtitle">Every builder covers the basics. Here are the features that actually set them apart.</p>
+          <div class="checklist-columns">
+            <div class="checklist-group">
+              <h4 class="checklist-group-title">For Any Website</h4>
+              <div class="checklist-item">
+                <span class="checklist-icon">&#10003;</span>
+                <div>
+                  <strong>Custom domain</strong>
+                  <span>yourbusiness.com — not yourbusiness.wixsite.com</span>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <span class="checklist-icon">&#10003;</span>
+                <div>
+                  <strong>Built-in SEO tools</strong>
+                  <span>Meta tags, sitemaps, and alt tags so Google finds your site</span>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <span class="checklist-icon">&#10003;</span>
+                <div>
+                  <strong>Mobile-responsive design</strong>
+                  <span>62% of visitors are on phones — your site must look great there</span>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <span class="checklist-icon">&#10003;</span>
+                <div>
+                  <strong>24/7 support</strong>
+                  <span>When something breaks at 11 PM, you need help now</span>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <span class="checklist-icon">&#10003;</span>
+                <div>
+                  <strong>Automatic backups</strong>
+                  <span>Protects against accidental deletions and data loss</span>
+                </div>
+              </div>
+            </div>
+            <div class="checklist-group">
+              <h4 class="checklist-group-title">For Selling Online</h4>
+              <div class="checklist-item">
+                <span class="checklist-icon">&#10003;</span>
+                <div>
+                  <strong>Payment processing</strong>
+                  <span>Credit cards, PayPal, Apple Pay — Shopify supports 100+ providers</span>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <span class="checklist-icon">&#10003;</span>
+                <div>
+                  <strong>Inventory management</strong>
+                  <span>Track stock, manage variants, get low-stock alerts</span>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <span class="checklist-icon">&#10003;</span>
+                <div>
+                  <strong>Abandoned cart recovery</strong>
+                  <span>Auto-emails customers who left — recovers 5-15% of lost sales</span>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <span class="checklist-icon">&#10003;</span>
+                <div>
+                  <strong>Automatic tax calculation</strong>
+                  <span>Rules vary by state/country — manual is a compliance risk</span>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <span class="checklist-icon">&#10003;</span>
+                <div>
+                  <strong>Shipping integrations</strong>
+                  <span>Real-time rates, label printing, tracking — saves hours weekly</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="guide-section">
-          <h3>5 Mistakes That Cost Real Money</h3>
-          <p><strong>We have seen these patterns across thousands of website builder users. Avoid them and you are already ahead of most.</strong></p>
-
-          <p><strong>Mistake #1: Choosing the cheapest plan and upgrading later</strong></p>
-          <ul>
-            <li>The cheapest plan rarely includes the features you need within 6 months (e-commerce, analytics, or removing ads)</li>
-            <li>Migrating content, redesigning, and reconfiguring when you upgrade wastes 10-40 hours</li>
-            <li><strong>What to do instead:</strong> Pick a plan based on where you will be in 12 months, not where you are today. The $10-20/month difference pays for itself in time saved.</li>
-          </ul>
-
-          <p><strong>Mistake #2: Ignoring mobile experience</strong></p>
-          <ul>
-            <li>62% of global web traffic comes from mobile devices in 2026. In some industries, it is over 75%.</li>
-            <li>Google uses mobile-first indexing — your mobile site determines your search ranking, not your desktop site</li>
-            <li><strong>What to do instead:</strong> Preview every page on mobile before publishing. All top builders offer this. If a page looks cluttered on a phone, simplify it.</li>
-          </ul>
-
-          <p><strong>Mistake #3: Launching without basic SEO</strong></p>
-          <ul>
-            <li>Without SEO, your site is invisible. It will not appear in Google results no matter how good it looks.</li>
-            <li>The bare minimum: unique page titles, meta descriptions, image alt tags, and submitting your sitemap to Google Search Console</li>
-            <li><strong>What to do instead:</strong> Spend 30 minutes on SEO settings before you launch. Every builder has a guided SEO setup — use it.</li>
-          </ul>
-
-          <p><strong>Mistake #4: Overdesigning your pages</strong></p>
-          <ul>
-            <li>Cluttered pages increase bounce rates by 38%. Visitors decide in 3-5 seconds whether to stay or leave.</li>
-            <li>Every extra font, color, animation, and widget slows your page down. Each second of load time reduces conversions by 7%.</li>
-            <li><strong>What to do instead:</strong> Start with a professional template and modify it minimally. Use 2 fonts maximum, 3 colors maximum, and remove anything that does not serve a clear purpose.</li>
-          </ul>
-
-          <p><strong>Mistake #5: Not connecting analytics from day one</strong></p>
-          <ul>
-            <li>Without analytics, you have no idea where visitors come from, what they click, or why they leave</li>
-            <li>Decisions based on gut feeling instead of data cost businesses an average of 20-30% in missed opportunities</li>
-            <li><strong>What to do instead:</strong> Connect Google Analytics (free) before your site goes live. Check it weekly. The data will tell you exactly what to improve.</li>
-          </ul>
+        <!-- SECTION 6: Mistakes -->
+        <div class="guide-block">
+          <h3 class="guide-block-title">5 Mistakes That Cost Real Money</h3>
+          <p class="guide-block-subtitle">Avoid these and you are already ahead of most website owners.</p>
+          <div class="mistakes-grid">
+            <div class="mistake-card">
+              <span class="mistake-number">1</span>
+              <h4>Choosing the cheapest plan</h4>
+              <p>You will likely need e-commerce, analytics, or ad removal within 6 months. Migrating later wastes 10-40 hours.</p>
+              <div class="mistake-fix"><strong>Fix:</strong> Pick a plan for where you will be in 12 months. The $10-20/month difference pays for itself.</div>
+            </div>
+            <div class="mistake-card">
+              <span class="mistake-number">2</span>
+              <h4>Ignoring mobile experience</h4>
+              <p>62% of traffic is mobile. Google ranks your mobile site first. A bad mobile experience means invisible to search.</p>
+              <div class="mistake-fix"><strong>Fix:</strong> Preview every page on mobile before publishing. If it looks cluttered, simplify.</div>
+            </div>
+            <div class="mistake-card">
+              <span class="mistake-number">3</span>
+              <h4>Launching without SEO</h4>
+              <p>Without SEO, your site will not appear in Google no matter how good it looks. Zero organic traffic, zero growth.</p>
+              <div class="mistake-fix"><strong>Fix:</strong> Spend 30 minutes on page titles, meta descriptions, and alt tags before launch.</div>
+            </div>
+            <div class="mistake-card">
+              <span class="mistake-number">4</span>
+              <h4>Overdesigning your pages</h4>
+              <p>Cluttered pages increase bounce rates by 38%. Every extra second of load time reduces conversions by 7%.</p>
+              <div class="mistake-fix"><strong>Fix:</strong> 2 fonts max, 3 colors max. Start with a template and modify minimally.</div>
+            </div>
+            <div class="mistake-card">
+              <span class="mistake-number">5</span>
+              <h4>Skipping analytics setup</h4>
+              <p>Without data, every decision is a guess. You will not know what works, what fails, or where visitors drop off.</p>
+              <div class="mistake-fix"><strong>Fix:</strong> Connect Google Analytics (free) before launch. Check it weekly.</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1881,46 +2071,425 @@ function getStarRating(rating: number) {
   .guide-intro {
     font-size: 1rem;
     color: #4B5563;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     font-style: italic;
   }
-  .guide-section {
-    margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
+
+  .guide-block {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
     border-bottom: 1px solid #E5E7EB;
   }
-  .guide-section:last-child {
-    border-bottom: none;
-  }
-  .guide-section h3 {
+  .guide-block:last-child { border-bottom: none; }
+  .guide-block-title {
     font-family: 'Sora', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 0.5rem;
+  }
+  .guide-block-subtitle {
+    font-size: 0.9375rem;
+    color: #68727C;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  /* STEP CARDS */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .step-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    color: white;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    border-radius: 8px;
+  }
+  .step-header h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #162433;
+    margin: 0;
+  }
+  .step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 auto;
+  }
+  .step-list li {
+    font-size: 0.8125rem;
+    color: #4B5563;
+    line-height: 1.55;
+    padding: 0.25rem 0 0.25rem 1rem;
+    position: relative;
+  }
+  .step-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #94A3B8;
+  }
+  .step-time {
+    margin-top: 0.75rem;
+    padding-top: 0.625rem;
+    border-top: 1px solid #F1F5F9;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #DC2626;
+    font-family: 'Sora', sans-serif;
+  }
+
+  /* VERDICT / TIP BOXES */
+  .guide-verdict-box {
+    background: linear-gradient(135deg, #FEF2F2 0%, #FFF7ED 100%);
+    border: 1px solid #FECACA;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+    color: #162433;
+    line-height: 1.6;
+  }
+  .guide-verdict-box strong { color: #991B1B; }
+  .guide-tip-box {
+    background: linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%);
+    border: 1px solid #BFDBFE;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+    color: #162433;
+    line-height: 1.6;
+  }
+  .guide-tip-box strong { color: #1a365d; }
+
+  /* COMPARE CARDS */
+  .compare-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .compare-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    position: relative;
+  }
+  .compare-card h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
     font-weight: 700;
     color: #162433;
     margin-bottom: 1rem;
   }
-  .guide-section p {
-    font-size: 0.9375rem;
-    color: #4B5563;
-    line-height: 1.7;
-    margin-bottom: 1rem;
+  .compare-winner {
+    border: 2px solid #22C55E;
+    background: linear-gradient(180deg, #F0FDF4 0%, #FFFFFF 40%);
   }
-  .guide-section ul {
-    padding-left: 1.25rem;
-    margin-bottom: 1rem;
-  }
-  .guide-section li {
-    font-size: 0.9375rem;
-    color: #4B5563;
-    line-height: 1.7;
+  .compare-card-label {
+    display: inline-block;
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
     margin-bottom: 0.5rem;
   }
-  .guide-section strong {
+  .compare-stats { display: flex; flex-direction: column; gap: 0; }
+  .compare-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #F1F5F9;
+    gap: 0.5rem;
+  }
+  .compare-stat:last-child { border-bottom: none; }
+  .compare-stat-label {
+    font-size: 0.75rem;
+    color: #68727C;
+    white-space: nowrap;
+  }
+  .compare-stat-value {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #162433;
+    text-align: right;
+  }
+
+  /* PRICING GROUPS */
+  .pricing-group {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .pricing-group-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 0.125rem;
+  }
+  .pricing-group-desc {
+    font-size: 0.8125rem;
+    color: #68727C;
+    margin-bottom: 1rem;
+  }
+  .pricing-items { display: flex; flex-direction: column; gap: 0; }
+  .pricing-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.5rem;
+    border-bottom: 1px solid #F1F5F9;
+    border-radius: 6px;
+  }
+  .pricing-item:last-child { border-bottom: none; }
+  .pricing-item-highlight {
+    background: linear-gradient(90deg, #F0FDF4 0%, #FFFFFF 100%);
+    border: 1px solid #BBF7D0;
+    border-bottom: 1px solid #BBF7D0;
+    position: relative;
+  }
+  .pricing-name {
+    font-size: 0.8125rem;
+    font-weight: 700;
     color: #162433;
   }
-  .guide-section em {
+  .pricing-detail {
+    font-size: 0.8125rem;
     color: #68727C;
-    font-style: italic;
+    line-height: 1.4;
+  }
+  .pricing-price {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #162433;
+    white-space: nowrap;
+    text-align: right;
+  }
+  .pricing-promo {
+    grid-column: 2 / -1;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #16A34A;
+  }
+
+  /* RECOMMENDATION CARDS */
+  .rec-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .rec-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    border-left: 4px solid #94A3B8;
+  }
+  .rec-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .rec-card-use {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #68727C;
+  }
+  .rec-card-price {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #162433;
+    background: #F1F5F9;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+  .rec-card h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 0.5rem;
+  }
+  .rec-card p {
+    font-size: 0.8125rem;
+    color: #4B5563;
+    line-height: 1.55;
+    margin-bottom: 0.5rem;
+  }
+  .rec-card-note {
+    font-size: 0.75rem !important;
+    color: #68727C !important;
+    background: #F9FAFB;
+    padding: 0.5rem 0.625rem;
+    border-radius: 6px;
+    margin-bottom: 0 !important;
+  }
+  .rec-shopify { border-left-color: #96BF48; }
+  .rec-squarespace { border-left-color: #000000; }
+  .rec-wordpress { border-left-color: #21759B; }
+  .rec-wix { border-left-color: #FAAD4D; }
+  .rec-weebly { border-left-color: #2C567E; }
+  .rec-godaddy { border-left-color: #00A4A6; }
+
+  /* CHECKLIST COLUMNS */
+  .checklist-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .checklist-group {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .checklist-group-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #E5E7EB;
+  }
+  .checklist-item {
+    display: flex;
+    gap: 0.625rem;
+    padding: 0.5rem 0;
+    align-items: flex-start;
+  }
+  .checklist-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    background: #DCFCE7;
+    color: #166534;
+    font-size: 0.625rem;
+    font-weight: 700;
+    border-radius: 50%;
+    margin-top: 1px;
+  }
+  .checklist-item strong {
+    display: block;
+    font-size: 0.8125rem;
+    color: #162433;
+    margin-bottom: 0.125rem;
+  }
+  .checklist-item span {
+    font-size: 0.75rem;
+    color: #68727C;
+    line-height: 1.4;
+  }
+
+  /* MISTAKES GRID */
+  .mistakes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .mistake-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    position: relative;
+  }
+  .mistake-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+    color: #991B1B;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-bottom: 0.625rem;
+  }
+  .mistake-card h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #162433;
+    margin-bottom: 0.5rem;
+  }
+  .mistake-card p {
+    font-size: 0.8125rem;
+    color: #4B5563;
+    line-height: 1.55;
+    margin-bottom: 0.625rem;
+  }
+  .mistake-fix {
+    font-size: 0.75rem;
+    color: #166534;
+    background: #F0FDF4;
+    padding: 0.5rem 0.625rem;
+    border-radius: 6px;
+    line-height: 1.5;
+  }
+  .mistake-fix strong { color: #166534; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .compare-cards { grid-template-columns: 1fr; }
+    .rec-cards { grid-template-columns: 1fr; }
+    .checklist-columns { grid-template-columns: 1fr; }
+    .mistakes-grid { grid-template-columns: 1fr; }
+    .pricing-item {
+      grid-template-columns: 80px 1fr auto;
+      gap: 0.5rem;
+    }
   }
 
   /* ─────────────────────────────────────────────────────────────── */
