@@ -46,6 +46,8 @@ const products = [
     spec3Label: "Templates", spec3Value: "100+",
     spec4Label: "E-commerce", spec4Value: "Built-in",
     spec5Label: "24/7 Support", spec5Value: "Yes",
+    ecommerce: "All Plans",
+    apps: "8,000+",
     url: "https://shopify.pxf.io/webbuildhub",
     pros: [
       "Most powerful e-commerce features of any website builder",
@@ -75,6 +77,8 @@ const products = [
     spec3Label: "Templates", spec3Value: "900+",
     spec4Label: "E-commerce", spec4Value: "Business+ Plans",
     spec5Label: "AI Builder", spec5Value: "Yes",
+    ecommerce: "Upgrade Required",
+    apps: "300+",
     url: "#",
     pros: [
       "Most intuitive drag-and-drop editor on the market",
@@ -104,6 +108,8 @@ const products = [
     spec3Label: "Templates", spec3Value: "150+",
     spec4Label: "E-commerce", spec4Value: "Business+ Plans",
     spec5Label: "Blogging", spec5Value: "Excellent",
+    ecommerce: "Upgrade Required",
+    apps: "30+",
     url: "#",
     pros: [
       "Industry-leading design quality and aesthetics",
@@ -133,6 +139,8 @@ const products = [
     spec3Label: "Themes", spec3Value: "Thousands",
     spec4Label: "Plugins", spec4Value: "59,000+",
     spec5Label: "Blogging", spec5Value: "Best-in-Class",
+    ecommerce: "Plugin Required",
+    apps: "59,000+",
     url: "#",
     pros: [
       "Most powerful content management system available",
@@ -162,6 +170,8 @@ const products = [
     spec3Label: "Templates", spec3Value: "40+",
     spec4Label: "E-commerce", spec4Value: "Built-in",
     spec5Label: "Square Integration", spec5Value: "Yes",
+    ecommerce: "Basic",
+    apps: "Limited",
     url: "#",
     pros: [
       "Very affordable pricing with generous free plan",
@@ -191,6 +201,8 @@ const products = [
     spec3Label: "Templates", spec3Value: "100+",
     spec4Label: "E-commerce", spec4Value: "Commerce Plans",
     spec5Label: "AI Builder", spec5Value: "Yes",
+    ecommerce: "Upgrade Required",
+    apps: "Limited",
     url: "#",
     pros: [
       "Fastest setup process, site ready in under an hour",
@@ -599,6 +611,8 @@ function getStarRating(rating: number) {
               <tr>
                 <th>Builder</th>
                 <th>Best For</th>
+                <th>E-commerce</th>
+                <th>Apps & Integrations</th>
                 <th>Free Plan</th>
                 <th>Starting Price</th>
                 <th>Rating</th>
@@ -607,7 +621,7 @@ function getStarRating(rating: number) {
             </thead>
             <tbody>
               {products.map((product, index) => (
-                <tr>
+                <tr class={index === 0 ? 'highlight-row' : ''}>
                   <td class="product-cell">
                     {index === 0 && <span class="table-editor-badge">Editor's Choice</span>}
                     <div class="product-info">
@@ -616,6 +630,12 @@ function getStarRating(rating: number) {
                     </div>
                   </td>
                   <td><span class="best-for-badge">{product.bestFor}</span></td>
+                  <td class="spec-cell">
+                    <span class={`ecommerce-badge ${product.ecommerce === 'All Plans' ? 'ecommerce-full' : 'ecommerce-limited'}`}>
+                      {product.ecommerce}
+                    </span>
+                  </td>
+                  <td class="spec-cell apps-cell">{product.apps}</td>
                   <td class="spec-cell">{product.spec2Value}</td>
                   <td class="spec-cell">{product.spec1Value}</td>
                   <td class="rating-cell">{product.rating}</td>
@@ -1755,7 +1775,7 @@ function getStarRating(rating: number) {
   /* ─────────────────────────────────────────────────────────────── */
   .comparison-section {
     margin-bottom: 3rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
     scroll-margin-top: 140px;
@@ -1856,6 +1876,29 @@ function getStarRating(rating: number) {
   .table-cta:hover {
     transform: translateY(-1px);
     box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+  }
+  .highlight-row {
+    background: linear-gradient(90deg, #f0fdf4 0%, #fefefe 100%);
+  }
+  .ecommerce-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .ecommerce-full {
+    background: #DCFCE7;
+    color: #166534;
+  }
+  .ecommerce-limited {
+    background: #F3F4F6;
+    color: #6B7280;
+  }
+  .apps-cell {
+    font-weight: 700;
+    color: #162433;
   }
 
   /* ─────────────────────────────────────────────────────────────── */
