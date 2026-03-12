@@ -12,6 +12,12 @@ export interface Author {
 // Author database - matched with available images in /public/images/Authors images of the review articles/
 const authors: Record<string, Author> = {
   // Web Design & Development Authors
+  'alex-storch': {
+    name: 'Alex Storch',
+    title: 'Senior Web Design Editor',
+    image: '/images/Authors images of the review articles/alex-storch.png',
+    bio: 'Former web developer turned consumer tech advocate with over 10 years of experience building and reviewing websites. Alex has helped thousands of small business owners and entrepreneurs choose the right website builder for their needs.'
+  },
   'sarah-chen': {
     name: 'Sarah Chen',
     title: 'Senior Web Design Editor',
@@ -54,15 +60,15 @@ const authors: Record<string, Author> = {
 
 // Category to author mapping
 const categoryAuthors: Record<string, string[]> = {
-  'website builders': ['sarah-chen', 'david-kim', 'james-wilson'],
-  'web design': ['sarah-chen', 'jessica-martinez', 'david-kim'],
+  'website builders': ['alex-storch', 'david-kim', 'james-wilson'],
+  'web design': ['alex-storch', 'jessica-martinez', 'david-kim'],
   'e-commerce': ['emily-johnson', 'sarah-chen', 'michael-rodriguez'],
   'tech': ['david-kim', 'james-wilson'],
   'web development': ['james-wilson', 'david-kim'],
   'business': ['michael-rodriguez', 'emily-johnson'],
   'seo': ['james-wilson', 'sarah-chen'],
   'design': ['jessica-martinez', 'sarah-chen'],
-  'default': ['sarah-chen', 'david-kim']
+  'default': ['alex-storch', 'david-kim']
 };
 
 /**
@@ -87,7 +93,7 @@ export function getAuthorByCategory(
   ) {
     const webAuthors = categoryAuthors['website builders'];
     const authorKey = webAuthors[0];
-    return authors[authorKey] || authors['sarah-chen'];
+    return authors[authorKey] || authors['alex-storch'];
   }
 
   // Check for e-commerce content
@@ -116,19 +122,19 @@ export function getAuthorByCategory(
   // Check category mapping
   for (const [key, authorKeys] of Object.entries(categoryAuthors)) {
     if (normalizedCategory.includes(key)) {
-      return authors[authorKeys[0]] || authors['sarah-chen'];
+      return authors[authorKeys[0]] || authors['alex-storch'];
     }
   }
 
   // Default author for unknown categories
-  return authors['sarah-chen'];
+  return authors['alex-storch'];
 }
 
 /**
  * Get a specific author by their key
  */
 export function getAuthorByKey(authorKey: string): Author {
-  return authors[authorKey] || authors['sarah-chen'];
+  return authors[authorKey] || authors['alex-storch'];
 }
 
 /**
