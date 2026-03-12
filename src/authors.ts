@@ -16,7 +16,7 @@ const authors: Record<string, Author> = {
     name: 'Alex Storch',
     title: 'Senior Web Design Editor',
     image: '/images/Authors images of the review articles/alex-storch.png',
-    bio: 'Former web developer turned consumer tech advocate with 13 years of experience building websites, reviewing website builders, and testing SEO tools. Alex has helped thousands of small business owners and entrepreneurs choose the right platforms for their online presence.'
+    bio: 'Former web developer with 13 years behind the scenes building and scaling websites for startups and enterprise clients, turned consumer advocate whose broad expertise across website building, SEO, hosting, and analytics gives him a sharp eye for the tools small businesses actually need.'
   },
   'sarah-chen': {
     name: 'Sarah Chen',
